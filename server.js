@@ -11,7 +11,7 @@ createContentSecurityPolicy({
   connectSrc: [
     // (ie. 'wss://<your-ngrok-domain>.app:*')
     'https://eatsnacc.com',
-    'https://hydrogen-snacc-app-126b439c6bf2dd2b167a.o2.myshopify.dev',
+    // 'https://hydrogen-snacc-app-126b439c6bf2dd2b167a.o2.myshopify.dev',
     'https://bc5s6ncz-3000.inc1.devtunnels.ms',
   ],
 });

@@ -116,7 +116,7 @@ export function Footer({ footer: footerPromise, header, publicStoreDomain }) {
               </div>
             </div>
           </div>
-          <div className='md:mx-16 text-white flex col-span-2 justify-evenly'>
+          <div className='md:mx-16 text-white flex col-span-2 justify-between md:justify-evenly'>
             {navItems.map((item, ind) => {
               return <ul className='flex flex-col gap-4 text-lg'>
                 <p className='mb-2 text-xl opacity-60'>{item.title}</p>

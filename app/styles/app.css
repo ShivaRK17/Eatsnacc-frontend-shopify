@@ -2,6 +2,11 @@
   font-family: "Neue Haas Grotesk Display Medium";
   src: url("/fonts/neuehaas/NeueHaasDisplayBold.ttf");
 }
+@font-face {
+  font-family: "City Tour";
+  src: url("/fonts/City Tour.ttf");
+}
+
 
 @font-face {
   font-family: "Motel Xenia";

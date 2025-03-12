@@ -178,18 +178,29 @@ export default function Homepage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4,
-              }} style={{ fontFamily: 'Motel Xenia' }} className='text-7xl font-bold tracking-wide text-white'>FLAVOR</motion.h2>
-            <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-7xl font-bold tracking-wide text-[#51282b]'>YOUR MIND</h2>
-            <motion.p initial={{ opacity: 0 }}
+              }} style={{ fontFamily: 'City Tour' }} className='text-6xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HEALTHY</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4, delay: 0.2
+              }} style={{ fontFamily: 'City Tour' }} className='text-6xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HITS</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4, delay: 0.4
+              }} style={{ fontFamily: 'City Tour' }} className='text-6xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
+            {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-7xl font-bold tracking-wide text-[#51282b]'>YOUR MIND</h2> */}
+            {/* <motion.p initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4,
-              }} className='text-lg my-2 text-[#51282b]'>Changing snacking one pea at a time.</motion.p>
+              }} className='text-lg my-2 text-[#51282b]'>Changing snacking one pea at a time.</motion.p> */}
             <motion.button initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4
-              }} className='rounded-full bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>shop SNACC</motion.button>
+              }} className='rounded-full bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>SNACC now</motion.button>
+
           </div>
         </div>
       </div>
@@ -201,18 +212,28 @@ export default function Homepage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4,
-              }} style={{ fontFamily: 'Motel Xenia' }} className='text-9xl text-white'>FLAVOR</motion.h2>
-            <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-9xl text-[#51282b]'>YOUR MIND</h2>
-            <motion.p initial={{ opacity: 0 }}
+              }} style={{ fontFamily: 'City Tour' }} className='text-8xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HEALTHY</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4, delay: 0.2
+              }} style={{ fontFamily: 'City Tour' }} className='text-8xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HITS</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4, delay: 0.4
+              }} style={{ fontFamily: 'City Tour' }} className='text-8xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
+            {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-9xl text-[#51282b]'>YOUR MIND</h2> */}
+            {/* <motion.p initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4,
-              }} className='text-xl my-2 text-[#51282b]'>Changing snacking one pea at a time.</motion.p>
+              }} className='text-xl my-2 text-[#51282b]'>Changing snacking one pea at a time.</motion.p> */}
             <motion.button initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4
-              }} className='rounded-full bg-[#51282b] px-14 text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>shop SNACC</motion.button>
+              }} style={{ fontFamily: 'City Tour' }} className='rounded-xl bg-[#51282b] my-2 px-10 text-lg text-white py-1 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer tracking-wide'>SNACC now</motion.button>
           </div>
         </div>
       </div>
@@ -238,7 +259,7 @@ export default function Homepage() {
       <div className='px-4 md:px-14'>
         <div className='bg-[#ffc604] rounded-4xl py-10'>
           <div className='px-4 md:px-16'>
-            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "Motel Xenia", transformOrigin: 'left' }} className='text-6xl tracking-wide font-bold text-[#51282b]'>chips just got hip </motion.h4>
+            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl text-[#fff2d8]'>chips just got hip </motion.h4>
           </div>
           <div className='w-full'>
             <Suspense fallback={<div className="text-center">Loading...</div>}>
@@ -314,10 +335,10 @@ export default function Homepage() {
         </Marquee> */}
         <div className="marquee-container" style={{ fontFamily: "Motel Xenia" }}>
           {/* First marquee */}
-          <div className="marquee">
-            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
-            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
-            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
+          <div className="marquee flex">
+            <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
           </div>
 
           {/* Second marquee */}
@@ -332,8 +353,8 @@ export default function Homepage() {
           {aboutList.map((list, ind) => (
             <div key={ind} className='flex w-full md:w-1/3 p-4 flex-col  items-center text-center text-[#51282b]'>
               <img className='h-30' src={list.img} alt="" />
-              <h4 style={{ fontFamily: "Motel Xenia" }} className='text-5xl font-semibold tracking-wide my-3'>{list.title}</h4>
-              <p className='text-xl'>{list.description}</p>
+              <h4 style={{ fontFamily: "City Tour" }} className='text-2xl tracking-wide my-3'>{list.title}</h4>
+              <p className='text-sm'>{list.description}</p>
             </div>
           ))}
         </div>
@@ -349,8 +370,8 @@ export default function Homepage() {
           <img className='absolute right-10 -top-10' src="/home/varpacknew.svg" alt="" />
         </div>
         <div className='md:w-1/2 flex flex-col p-4 md:px-10'>
-          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-6xl md:text-8xl text-[#41282b] font-semibold tracking-wide'>Our Cheeziest Variety Pack</motion.h4 >
-          <p className='text-[#51282b] text-2xl my-5'>For the Cheese lover who wants all the cheeze feels, minus the guilt. Stock up with 9 bags of Vegan White Cheddar and 9 bags of Vegan Nacho Puffs!</p>
+          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl md:text-5xl text-[#41282b] tracking-wide'>Our Cheeziest Variety Pack</motion.h4 >
+          <p className='text-[#51282b] text-lg my-5'>For the Cheese lover who wants all the cheeze feels, minus the guilt. Stock up with 9 bags of Vegan White Cheddar and 9 bags of Vegan Nacho Puffs!</p>
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <Await resolve={data.recommendedProducts}>
               {(response) => (
@@ -398,7 +419,7 @@ export default function Homepage() {
                         {response.products.nodes.map((e) => {
                           return (
                             <div key={e.id}>
-                              <ChipsCard  product={e}>
+                              <ChipsCard product={e}>
 
                               </ChipsCard>
                             </div>
@@ -418,8 +439,8 @@ export default function Homepage() {
       </div>
 
       <div className='px-4 md:px-14'>
-        <div className='w-full p-3 md:p-16 rounded-4xl bg-[#fdb716] text-center'>
-          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-6xl tracking-wide font-bold text-[#51282b]'>what they're saying... </motion.h4>
+        <div className='w-full p-3 md:p-16 rounded-4xl bg-[#fdb716]'>
+          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#fff2d8]'>why they trust us</motion.h4>
           <div className='w-full'>
             <div className="relative">
               <Carousel
@@ -470,8 +491,8 @@ export default function Homepage() {
                         <IoStarSharp size={26} color='#51282b' />
                         <IoStarSharp size={26} color='#51282b' />
                       </div>
-                      <p className='mb-3 mt-2'>{e.name}</p>
-                      <p>{e.said}</p>
+                      <p style={{ fontFamily: 'City Tour' }} className='mb-3 mt-2'>{e.name}</p>
+                      <p className='text-lg'>{e.said}</p>
                       <div className='w-full flex justify-end underline underline-offset-10 mt-3'>
                         <Link to={`/shop/collections/${e.url}`}>
                           shop {e.url}
@@ -496,7 +517,7 @@ export default function Homepage() {
 
       <div className='px-4 md:px-14 my-20'>
         <div className='flex justify-between flex-col md:flex-row'>
-          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-6xl tracking-wide font-bold text-[#51282b]'>power to the peaple</motion.h4>
+          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#51282b]'>power to the peaple</motion.h4>
           <button className='rounded-full bg-[#51282b] px-7 py-3 my-3 md:my-0 text-sm  text-white w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>follow @SNACC</button>
         </div>
         <div>
@@ -537,7 +558,7 @@ export default function Homepage() {
             slidesToSlide={1}
             swipeable
           >
-            {[...Array(10)].map((e,ind) => {
+            {[...Array(10)].map((e, ind) => {
               return (
                 <div key={ind} className='m-1 rounded-3xl overflow-hidden'>
                   <img src="/home/power.png" alt="" />

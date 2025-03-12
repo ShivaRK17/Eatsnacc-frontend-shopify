@@ -163,8 +163,8 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain }) {
         {navItems.map((item, index) => (
           <NavLink onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave} key={index} prefetch="intent" to="/" className="hidden md:flex items-center">
-            <span className="font-extrabold text-base text-[#51282b] hover:opacity-80">{item.title}</span>
-            <FaAngleDown className='mt-1 ml-2 font-bold' color='#51282b' />
+            <span style={{fontFamily:"City Tour"}} className="uppercase text-xl text-[#fdb716] tracking-wider hover:opacity-80">{item.title}</span>
+            <FaAngleDown className='mt-1 ml-2 font-bold' color='#fdb716' />
             {activeDropdown === index && (
               <div
                 className='absolute top-full left-0 w-full max-h-[calc(100vh-4rem)] bg-white shadow-md z-50 overflow-y-scroll'
@@ -240,7 +240,7 @@ function AccountLink({ isLoggedIn }) {
       to="/account"
       className="mr-4 hidden md:block"
     >
-      <span className="font-bold text-base text-[#51282b] hover:opacity-80">account</span>
+      <span style={{fontFamily:"City Tour"}} className="font-bold text-xl tracking-wider text-[#fdb716] hover:opacity-80">account</span>
     </NavLink>
   );
 }
