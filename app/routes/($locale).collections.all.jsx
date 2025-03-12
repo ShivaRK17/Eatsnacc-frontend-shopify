@@ -103,7 +103,7 @@ const ChipsCard = ({ product }) => {
         <span className='text-sm'>$24.99</span>
       </div>
       <div className='flex justify-between'>
-        <span className='text-sm text-[#fec800]'>puff variety pack</span>
+        <span className='text-sm text-[#fdb716]'>puff variety pack</span>
         <span className='text-sm'>0.8oz bags</span>
       </div>
     </div>
@@ -116,7 +116,7 @@ export default function Collection() {
   const { products,collections } = useLoaderData();
 
   return (
-    <div className="bg-[#fec800] p-14">
+    <div className="bg-[#fdb716] p-14">
       <div className='flex justify-between my-10'>
         <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-7xl tracking-wide font-bold text-[#51282b]'>SHOP ALL</motion.h4>
         <div className='flex gap-4 items-center justify-center text-lg'>

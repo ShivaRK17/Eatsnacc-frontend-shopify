@@ -11,7 +11,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       >
         <span className="text-lg font-medium text-[#51282b]">{question}</span>
         <span className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-          <FaAngleDown size={24} className={`${isOpen?"bg-[#51282b] text-[#fec800]":"text-[#51282b] bg-white"} rounded-full p-1`} />
+          <FaAngleDown size={24} className={`${isOpen?"bg-[#51282b] text-[#fdb716]":"text-[#51282b] bg-white"} rounded-full p-1`} />
         </span>
       </button>
       
@@ -66,7 +66,7 @@ const FAQSection = () => {
         <p className="text-2xl text-[#51282b] mt-2">We've got answers.</p>
       </div>
       
-      <div className="bg-[#fec800] rounded-3xl p-8">
+      <div className="bg-[#fdb716] rounded-3xl p-8">
         {faqData.map((faq, index) => (
           <FAQItem
             key={index}

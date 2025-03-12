@@ -112,7 +112,7 @@ export default function Cart() {
   const cart = useLoaderData();
 
   return (
-    <div className="cart m-4 pd:m-16 p-5 md:p-10 bg-[#fec800] rounded-4xl">
+    <div className="cart m-4 pd:m-16 p-5 md:p-10 bg-[#fdb716] rounded-4xl">
       <h4 style={{ fontFamily: "Motel Xenia" }} className='text-6xl text-[#41282b] font-semibold tracking-wide'>CART</h4 >
       <CartMain layout="page" cart={cart} />
     </div>

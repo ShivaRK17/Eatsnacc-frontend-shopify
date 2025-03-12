@@ -111,7 +111,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       >
         <span className="text-xl font-medium text-[#51282b]">{question}</span>
         <span className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-          <FaAngleDown size={24} className={`${isOpen ? "bg-[#51282b] text-[#fec800]" : "text-[#51282b] bg-white"} rounded-full p-1`} />
+          <FaAngleDown size={24} className={`${isOpen ? "bg-[#51282b] text-[#fdb716]" : "text-[#51282b] bg-white"} rounded-full p-1`} />
         </span>
       </button>
 
@@ -203,7 +203,7 @@ export default function Product() {
           <span className='text-sm'>{product.priceRange.minVariantPrice.amount}</span>
         </div>
         <div className='flex justify-between'>
-          <span className='text-sm text-[#fec800]'>puff variety pack</span>
+          <span className='text-sm text-[#fdb716]'>puff variety pack</span>
           <span className='text-sm'>0.8oz bags</span>
         </div>
       </div>

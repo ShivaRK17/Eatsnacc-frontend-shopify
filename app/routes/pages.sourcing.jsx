@@ -31,7 +31,7 @@ export default function Sustainability() {
                 <div className="md:w-1/2">
                     <img src="/sourcing/hero.png" alt="" />
                 </div>
-                <div className="md:w-1/2 bg-[#fec800] flex flex-col items-center justify-center text-[#51282b]">
+                <div className="md:w-1/2 bg-[#fdb716] flex flex-col items-center justify-center text-[#51282b]">
                     <div className="md:w-3/4 flex flex-col items-center justify-center text-center mx-7 md:mx-0 my-10 md:my-0">
                         <h3 style={{ fontFamily: "Motel Xenia" }} className="text-5xl md:text-6xl font-bold tracking-wide">We’re on a mission to shake things up</h3>
                         <p className="text-xl my-2">At HIPPEAS, we believe sustainable farming (and snacking!) is totally the way forward.

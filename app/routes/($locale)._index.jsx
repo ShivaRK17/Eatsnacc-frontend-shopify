@@ -40,7 +40,8 @@ async function loadCriticalData({ context }) {
   ]);
 
   return {
-    featuredCollection: collections.nodes[0],
+    // featuredCollection: collections.nodes[0],
+    featuredCollection: [],
   };
 }
 const CustomButtonGroup = ({ next, previous }) => (
@@ -77,7 +78,7 @@ const ChipsCard = ({ product }) => {
         <span className='text-sm'>{product.priceRange.minVariantPrice.amount}</span>
       </div>
       <div className='flex justify-between'>
-        <span className='text-sm text-[#fec800]'>puff variety pack</span>
+        <span className='text-sm text-[#fdb716]'>puff variety pack</span>
         <span className='text-sm'>0.8oz bags</span>
       </div>
     </div>
@@ -310,19 +311,19 @@ export default function Homepage() {
 
       <div className='w-full my-5'>
         {/* <Marquee direction="left" speed={10} autoFill style={{ fontFamily: "Motel Xenia" }}>
-        <span className='text-[#fec800] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
+        <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
         </Marquee> */}
         <div className="marquee-container" style={{ fontFamily: "Motel Xenia" }}>
           {/* First marquee */}
           <div className="marquee">
-            <span className='text-[#fec800] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
-            <span className='text-[#fec800] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
-            <span className='text-[#fec800] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
+            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
+            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
+            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
           </div>
 
           {/* Second marquee */}
           {/* <div className="marquee2">
-            <span className='text-[#fec800] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
+            <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
           </div> */}
         </div>
       </div>
@@ -418,7 +419,7 @@ export default function Homepage() {
       </div>
 
       <div className='px-4 md:px-14'>
-        <div className='w-full p-3 md:p-16 rounded-4xl bg-[#fec800] text-center'>
+        <div className='w-full p-3 md:p-16 rounded-4xl bg-[#fdb716] text-center'>
           <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-6xl tracking-wide font-bold text-[#51282b]'>what they're saying... </motion.h4>
           <div className='w-full'>
             <div className="relative">

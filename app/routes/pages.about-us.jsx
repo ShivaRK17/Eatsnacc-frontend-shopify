@@ -79,7 +79,7 @@ export default function AboutUs() {
                 <div className="md:w-1/2">
                     <img src="/about-us/hero.png" alt="" />
                 </div>
-                <div className="md:w-1/2 bg-[#fec800] flex flex-col items-center justify-center text-[#51282b]">
+                <div className="md:w-1/2 bg-[#fdb716] flex flex-col items-center justify-center text-[#51282b]">
                     <div className="md:w-3/4 flex flex-col items-center justify-center text-center mx-7 md:mx-0 my-10 md:my-0">
                         <h3 style={{ fontFamily: "Motel Xenia" }} className="text-5xl md:text-6xl font-bold tracking-wide">We’re on a mission to shake things up</h3>
                         <p className="text-xl">Forget tie-dye t-shirts, dreadlocks and lava lamps…it’s the spirit of the era that lives on in us. Join the freedom fighters, snacktivists and chickpea charmers who are reinventing snacking, one pea at time!</p>
@@ -155,7 +155,7 @@ export default function AboutUs() {
                                                     <span className='text-sm'>$24.99</span>
                                                 </div>
                                                 <div className='flex justify-between'>
-                                                    <span className='text-sm text-[#fec800]'>puff variety pack</span>
+                                                    <span className='text-sm text-[#fdb716]'>puff variety pack</span>
                                                     <span className='text-sm'>0.8oz bags</span>
                                                 </div>
                                             </div>
