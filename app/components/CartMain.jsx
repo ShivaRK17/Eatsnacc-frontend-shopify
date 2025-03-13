@@ -48,10 +48,10 @@ function CartEmpty({hidden = false}) {
   const {close} = useAside();
   return (
     <div hidden={hidden} className='h-full flex items-center justify-center flex-col'>
-      <h4 style={{ fontFamily: "Motel Xenia" }} className='text-4xl md:text-7xl mt-5 text-[#41282b] font-semibold tracking-wide'>Your cart is empty</h4 >
+      <h4 style={{ fontFamily: "City Tour" }} className='text-4xl mt-5 text-[#41282b] tracking-wide'>Your cart is empty</h4 >
       <br />
 
-      <Link className='rounded-full bg-[#51282b] px-14 text-base md:text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer' to="/collections" onClick={close} prefetch="viewport">
+      <Link style={{fontFamily:"City Tour"}} className='rounded-2xl bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer' to="/collections" onClick={close} prefetch="viewport">
         Continue shopping →
       </Link>
     </div>

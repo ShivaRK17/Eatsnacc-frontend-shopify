@@ -108,7 +108,7 @@ export function Footer({ footer: footerPromise, header, publicStoreDomain }) {
         <div className=' grid grid-cols-1 md:grid-cols-4 justify-between'>
           <div className='col-span-1'>
             <div className='flex flex-col items-center md:items-start'>
-              <img className='w-3/4' src="/footer/main.png" alt="" />
+              <img className='w-3/4' src="/logo.png" alt="" />
               <div className='flex my-10 gap-10 justify-center md:justify-start'>
                 <Link><FaFacebook size={28} className="" color='white' /></Link>
                 <Link><FaTwitter size={28} className="" color='white' /></Link>

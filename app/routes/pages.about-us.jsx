@@ -81,13 +81,13 @@ export default function AboutUs() {
                 </div>
                 <div className="md:w-1/2 bg-[#fdb716] flex flex-col items-center justify-center text-[#51282b]">
                     <div className="md:w-3/4 flex flex-col items-center justify-center text-center mx-7 md:mx-0 my-10 md:my-0">
-                        <h3 style={{ fontFamily: "Motel Xenia" }} className="text-5xl md:text-6xl font-bold tracking-wide">We’re on a mission to shake things up</h3>
+                        <h3 style={{ fontFamily: "City Tour" }} className="text-4xl md:text-4xl tracking-wide">We’re on a mission to shake things up</h3>
                         <p className="text-xl">Forget tie-dye t-shirts, dreadlocks and lava lamps…it’s the spirit of the era that lives on in us. Join the freedom fighters, snacktivists and chickpea charmers who are reinventing snacking, one pea at time!</p>
                     </div>
                 </div>
             </div>
             <div className="py-5 my-10">
-                <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-5xl md:text-6xl tracking-wide font-bold text-[#51282b]'>meet the snacc pack</motion.h4>
+                <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl md:text-6xl tracking-wide font-bold text-[#51282b]'>meet the snacc pack</motion.h4>
                 <div className="flex justify-between my-2 flex-col md:flex-row">
                     <p className="text-xl md:text-2xl text-[#51282b] opacity-80">Snacks that taste good and do good for the Mind, Body & Soul.</p>
                     <Link to={'/collections/all'} className=" hover:underline text-2xl text-[#51282b] flex items-center">View all <FaAngleRight className="ml-5" size={20} /></Link>

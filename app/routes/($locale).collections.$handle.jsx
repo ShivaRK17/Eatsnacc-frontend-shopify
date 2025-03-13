@@ -163,7 +163,7 @@ export default function Collection() {
     // </div>
     <div className="bg-[#fdb716] p-4 md:p-14">
       <div className='flex justify-between my-10 md:text-start text-center flex-col md:flex-row'>
-        <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-7xl tracking-wide font-bold text-[#51282b]'>{collection.title}</motion.h4>
+        <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#51282b]'>{collection.title}</motion.h4>
         <div className='flex flex-wrap gap-4 items-center justify-center text-lg my-5 md:my-0'>
           {collections.nodes.map((link, index) => (
             <Link key={index} to={`/collections/${link.handle}`} className={`rounded-full text-sm md:text-base p-2 px-9 ${link.title === collection.title ? "text-white bg-[#51282b]" : "text-[#51282b] bg-white"}`}>

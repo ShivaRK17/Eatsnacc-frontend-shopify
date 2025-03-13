@@ -62,7 +62,7 @@ const FAQSection = () => {
   return (
     <div className="w-full max-w-4xl mx-auto py-16 px-4">
       <div className="text-center mb-8">
-        <h2 style={{fontFamily:"Motel Xenia"}} className="text-6xl font-medium text-[#51282b]">FAQS</h2>
+        <h2 style={{fontFamily:"City Tour"}} className="text-6xl font-medium text-[#51282b]">FAQS</h2>
         <p className="text-2xl text-[#51282b] mt-2">We've got answers.</p>
       </div>
       

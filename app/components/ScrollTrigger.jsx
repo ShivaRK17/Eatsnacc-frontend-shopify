@@ -139,7 +139,7 @@ const ScrollSyncSection = () => {
                                 whileInView={{ opacity: activeIndex === index ? 1 : 0.4, y: 0 }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <h2 style={{ fontFamily: "Motel Xenia" }} className="text-7xl tracking-wide font-bold mb-4">{section.title}</h2>
+                                <h2 style={{ fontFamily: "City Tour" }} className="text-5xl tracking-wide  mb-4">{section.title}</h2>
                                 <p className="text-2xl">{section.description}</p>
                             </motion.div>
                         ))}
@@ -182,7 +182,7 @@ const ScrollSyncSection = () => {
                     <div key={section.id}
                         className={`py-8 w-full transition-all duration-300 text-[#51282b]`}>
                         <img src={section.image} className='rounded-4xl' alt={section.alt} />
-                        <h2 style={{ fontFamily: "Motel Xenia" }} className="text-5xl tracking-wide font-bold my-4">{section.title}</h2>
+                        <h2 style={{ fontFamily: "City Tour" }} className="text-5xl tracking-wide  my-4">{section.title}</h2>
                         <p className="text-2xl">{section.description}</p>
                     </div>
                 ))}

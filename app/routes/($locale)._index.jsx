@@ -352,16 +352,16 @@ export default function Homepage() {
         <div className='flex flex-wrap'>
           {aboutList.map((list, ind) => (
             <div key={ind} className='flex w-full md:w-1/3 p-4 flex-col  items-center text-center text-[#51282b]'>
-              <img className='h-30' src={list.img} alt="" />
-              <h4 style={{ fontFamily: "City Tour" }} className='text-2xl tracking-wide my-3'>{list.title}</h4>
-              <p className='text-sm'>{list.description}</p>
+              <img className='' src={list.img} alt="" />
+              {/* <h4 style={{ fontFamily: "City Tour" }} className='text-2xl tracking-wide my-3'>{list.title}</h4>
+              <p className='text-sm'>{list.description}</p> */}
             </div>
           ))}
         </div>
       </div>
 
       <div className='flex items-center justify-center my-10'>
-        <button className='rounded-full bg-[#51282b] px-4 md:px-14 text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>more about SNACC</button>
+        <button style={{fontFamily:"City Tour"}} className='rounded-2xl bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>more about SNACC</button>
       </div>
 
       <div className='px-4 md:px-14 my-26 flex md:flex-row flex-col'>
@@ -509,11 +509,11 @@ export default function Homepage() {
         </div>
       </div>
 
-      <div className='px-4 md:px-14 my-20'>
+      {/* <div className='px-4 md:px-14 my-20'>
         <video className='rounded-4xl object-cover min-h-[60vh]' controls >
           <source src="/home/vid.mp4" type="video/mp4" />
         </video>
-      </div>
+      </div> */}
 
       <div className='px-4 md:px-14 my-20'>
         <div className='flex justify-between flex-col md:flex-row'>
