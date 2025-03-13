@@ -107,17 +107,17 @@ function loadDeferredData({ context }) {
 
 const aboutList = [
   {
-    img: "/home/abouts/image1.png",
+    img: "/home/abouts/oimage1.png",
     title: "Made with Peas",
     description: "Our chickpeas and yellow peas support a healthy and diverse farm by naturally keeping nutrients in the soil, where they should be."
   },
   {
-    img: "/home/abouts/image2.png",
+    img: "/home/abouts/oimage2.png",
     title: "Packed with Protein & Fiber",
     description: "Nothing but the good stuff here! Our snacks are packed with plant protein & fiber to keep you keepin' on. Thank you peas!"
   },
   {
-    img: "/home/abouts/image3.png",
+    img: "/home/abouts/oimage3.png",
     title: "Full of Far Out Flavor",
     description: "We're all about Zero Snackrifice! No cardboard snacks here, our snacks are packed with Far Out Flavor so you don't have to choose between taste and eating better."
   },
