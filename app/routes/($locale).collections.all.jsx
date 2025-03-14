@@ -88,14 +88,16 @@ const ChipsCard = ({ product }) => {
   const variantUrl = useVariantUrl(product.handle);
   return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden relative'>
     <div className='relative cursor-pointer'>
-      {product.featuredImage?<Image
-        alt={product.featuredImage.altText || product.title}
-        className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0'
-        aspectRatio="1/1"
-        data={product.featuredImage}
-        sizes="(min-width: 45em) 400px, 100vw"
-      />:<img className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-      <img className='' src="/home/chips1.png" alt="" />
+    {product.images.nodes[0] ? <Image
+        alt={product.images.nodes[0].alt || product.title}
+        className='hover:opacity-0 transition duration-100 ease-in-out h-full object-cover w-full absolute top-0 left-0'
+        data={product.images.nodes[0]}
+      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+      {product.images.nodes[1] ? <Image
+        alt={product.images.nodes[1].alt || product.title}
+        className='h-full object-cover w-full'
+        data={product.images.nodes[1]}
+      /> : <Image data={product.images.nodes[1]} className='h-full object-cover w-full' src="/home/chips2.png" alt="" />}
     </div>
     <div className='bg-white p-4'>
       <div className='flex justify-between'>
@@ -118,7 +120,7 @@ export default function Collection() {
   return (
     <div className="bg-[#fdb716] p-14">
       <div className='flex justify-between my-10'>
-        <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-7xl tracking-wide font-bold text-[#51282b]'>SHOP ALL</motion.h4>
+        <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#51282b]'>SHOP ALL</motion.h4>
         <div className='flex gap-4 items-center justify-center text-lg'>
           {collections.nodes.map((link, index) => (
             <Link key={index} to={`/collections/${link.handle}`} className={`rounded-full p-2 px-9 ${index === 1 ? "text-white bg-[#51282b]" : "text-[#51282b] bg-white"}`}>
@@ -191,6 +193,15 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
       url
       width
       height
+    }
+      images(first: 2) {
+        nodes {
+        id
+        url
+      altText
+      width
+      height
+      }
     }
     priceRange {
       minVariantPrice {

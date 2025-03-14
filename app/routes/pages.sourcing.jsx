@@ -109,8 +109,8 @@ export default function Sustainability() {
             </div>
         </div>
 
-        <div className='flex flex-col text-[#51282b] m-5 md:hidden'>
-            <h4 style={{ fontFamily: "Motel Xenia" }} className='text-5xl tracking-wide font-bold '>What The Avena Pilot Program entails</h4>
+        <div className='flex flex-col text-[#51282b] m-5 my-10 text-center md:hidden'>
+            <h4 style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide '>What The Avena Pilot Program entails</h4>
             <p className=" text-2xl my-3 ">Regenerative agriculture is more than just a buzzword; it's a holistic approach to farming that aims to revitalize our ecosystems, improve soil health, and combat climate change. It goes beyond sustainable practices to actively restore and regenerate the environment</p>
             <img src="/sourcing/hero2mobile.png" className="rounded-4xl" alt="" />
         </div>

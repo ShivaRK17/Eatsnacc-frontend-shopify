@@ -187,14 +187,16 @@ export default function Product() {
     const variantUrl = useVariantUrl(product.handle);
     return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden relative'>
       <div className='relative cursor-pointer'>
-        {product.featuredImage ? <Image
-          alt={product.featuredImage.altText || product.title}
-          className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0'
-          aspectRatio="1/1"
-          data={product.featuredImage}
-          sizes="(min-width: 45em) 400px, 100vw"
-        /> : <img className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-        <img className='' src="/home/chips1.png" alt="" />
+      {product.images.nodes[0] ? <Image
+        alt={product.images.nodes[0].alt || product.title}
+        className='hover:opacity-0 transition duration-100 ease-in-out h-full object-cover w-full absolute top-0 left-0'
+        data={product.images.nodes[0]}
+      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+      {product.images.nodes[1] ? <Image
+        alt={product.images.nodes[1].alt || product.title}
+        className='h-full object-cover w-full'
+        data={product.images.nodes[1]}
+      /> : <Image data={product.images.nodes[1]} className='h-full object-cover w-full' src="/home/chips2.png" alt="" />}
       </div>
       <div className='bg-white p-4'>
         <div className='flex justify-between'>
@@ -231,7 +233,7 @@ export default function Product() {
             selectedVariantImage={selectedVariant?.image}
           />
           <div className="sticky h-fit top-0 text-[#51282b] mx-3 md:mx-10 flex flex-col gap-5 text-xl md:w-1/2">
-            <h1 style={{ fontFamily: "Motel Xenia" }} className='text-6xl font-bold tracking-wide'>{title}</h1>
+            <h1 style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide'>{title}</h1>
             <ProductPrice
               className="text-xl font-bold"
               price={selectedVariant?.price}
@@ -289,7 +291,7 @@ export default function Product() {
 
         <div className='md:rounded-4xl flex-col md:flex-row bg-[#99e1d8] p-3 py-10 md:p-14 my-10 flex'>
           <div className='md:w-1/3'>
-            <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "Motel Xenia" }} className='text-6xl text-[#41282b] font-semibold tracking-wide'>inside the hippeas puff</motion.h4 >
+            <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl text-[#41282b] tracking-wide'>inside the hippeas puff</motion.h4 >
             <p className='text-[#51282b] text-xl my-5'>Our chickpea puffs are not only made with sustainably grown chickpeas, but also offer a rich source of plant-based protein, fiber and far out flavor!</p>
           </div>
           <div className='md:w-2/3 md:ml-10'>
@@ -299,7 +301,7 @@ export default function Product() {
 
         <div className='bg-[#ffc604] rounded-4xl py-10'>
           <div className='px-16'>
-            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "Motel Xenia", transformOrigin: 'left' }} className='text-6xl tracking-wide font-bold text-[#51282b]'>You may also like...</motion.h4>
+            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl tracking-wide font-bold text-[#51282b]'>You may also like...</motion.h4>
           </div>
           <div className='w-full'>
             <Suspense fallback={<div className="text-center">Loading...</div>}>
@@ -383,7 +385,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
         currencyCode
       }
     }
-      images(first: 1) {
+      images(first: 2) {
         nodes {
         id
         url

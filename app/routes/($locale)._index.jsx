@@ -64,12 +64,16 @@ const ChipsCard = ({ product }) => {
   const variantUrl = useVariantUrl(product.handle);
   return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden relative shadow'>
     <div className='relative cursor-pointer'>
-      {product.featuredImage ? <Image
-        alt={product.featuredImage.altText || product.title}
+      {product.images.nodes[0] ? <Image
+        alt={product.images.nodes[0].alt || product.title}
         className='hover:opacity-0 transition duration-100 ease-in-out w-full absolute top-0 left-0'
-        data={product.featuredImage}
-      /> : <img className='hover:opacity-0 transition duration-100 ease-in-out w-full absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-      <img className='w-full' src="/home/chips1.png" alt="" />
+        data={product.images.nodes[0]}
+      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+      {product.images.nodes[1] ? <Image
+        alt={product.images.nodes[1].alt || product.title}
+        className=' w-full'
+        data={product.images.nodes[1]}
+      /> : <Image data={product.images.nodes[1]} className='w-full' src="/home/chips2.png" alt="" />}
     </div>
     <div className='bg-white p-4'>
       <div className='flex justify-between'>
@@ -333,7 +337,7 @@ export default function Homepage() {
         {/* <Marquee direction="left" speed={10} autoFill style={{ fontFamily: "Motel Xenia" }}>
         <span className='text-[#fdb716] text-[150px] text-nowrap ml-30 font-bold tracking-wide'>Better for you, Better for the earth</span>
         </Marquee> */}
-        <div className="marquee-container" style={{ fontFamily: "Motel Xenia" }}>
+        <div className="marquee-container">
           {/* First marquee */}
           <div className="marquee flex">
             <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
@@ -361,7 +365,7 @@ export default function Homepage() {
       </div>
 
       <div className='flex items-center justify-center my-10'>
-        <button style={{fontFamily:"City Tour"}} className='rounded-2xl bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>more about SNACC</button>
+        <button style={{ fontFamily: "City Tour" }} className='rounded-2xl bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>more about SNACC</button>
       </div>
 
       <div className='px-4 md:px-14 my-26 flex md:flex-row flex-col'>
@@ -671,7 +675,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
         currencyCode
       }
     }
-      images(first: 1) {
+      images(first: 2) {
         nodes {
         id
         url

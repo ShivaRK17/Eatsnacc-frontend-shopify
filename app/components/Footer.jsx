@@ -127,7 +127,7 @@ export function Footer({ footer: footerPromise, header, publicStoreDomain }) {
             })}
           </div>
           <div className='col-span-1 md:mx-4 my-10 md:my-0'>
-            <h5 style={{ fontFamily: "Motel Xenia" }} className='text-4xl md:text-6xl tracking-wide  text-white'>Subscribe for 10% off your first order</h5>
+            <h5 style={{ fontFamily: "City Tour" }} className='text-4xl tracking-wide  text-white'>Subscribe for 10% off your first order</h5>
             <div className='bg-transparent rounded-full border-2 flex my-2 border-white p-5'>
               <input type="email" placeholder='E-mail' className='outline-none flex-1 text-white font-sans' />
               <div className='rounded-full bg-white h-6 w-6 flex items-center justify-center'>

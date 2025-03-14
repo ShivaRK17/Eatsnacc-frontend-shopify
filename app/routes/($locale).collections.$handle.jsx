@@ -58,7 +58,7 @@ async function loadCriticalData({ context, params, request }) {
       variables: paginationVariables,
     }),
     // Add other queries here, so that they are loaded in parallel
-  ]);  
+  ]);
 
   if (!collection) {
     throw new Response(`Collection ${handle} not found`, {
@@ -67,7 +67,7 @@ async function loadCriticalData({ context, params, request }) {
   }
 
   return {
-    collection,collections
+    collection, collections
   };
 }
 
@@ -108,14 +108,16 @@ const ChipsCard = ({ product }) => {
   const variantUrl = useVariantUrl(product.handle);
   return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden relative'>
     <div className='relative cursor-pointer'>
-      {product.featuredImage?<Image
-        alt={product.featuredImage.altText || product.title}
-        className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0'
-        aspectRatio="1/1"
-        data={product.featuredImage}
-        sizes="(min-width: 45em) 400px, 100vw"
-      />:<img className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-      <img className='' src="/home/chips1.png" alt="" />
+      {product.images.nodes[0] ? <Image
+        alt={product.images.nodes[0].alt || product.title}
+        className='hover:opacity-0 transition duration-100 ease-in-out h-full object-cover w-full absolute top-0 left-0'
+        data={product.images.nodes[0]}
+      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+      {product.images.nodes[1] ? <Image
+        alt={product.images.nodes[1].alt || product.title}
+        className='h-full object-cover w-full'
+        data={product.images.nodes[1]}
+      /> : <Image data={product.images.nodes[1]} className='h-full object-cover w-full' src="/home/chips2.png" alt="" />}
     </div>
     <div className='bg-white p-4'>
       <div className='flex justify-between'>
@@ -134,7 +136,7 @@ const ChipsCard = ({ product }) => {
 
 export default function Collection() {
   /** @type {LoaderReturnData} */
-  const { collection,collections } = useLoaderData();
+  const { collection, collections } = useLoaderData();
 
   return (
     // <div className="collection">
@@ -176,8 +178,8 @@ export default function Collection() {
         connection={collection.products}
         resourcesClassName="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-10"
       >
-        {({node: product, index}) => (
-          <ChipsCard product={product}/>
+        {({ node: product, index }) => (
+          <ChipsCard product={product} />
         )}
       </PaginatedResourceSection>
     </div>
@@ -231,6 +233,15 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
       url
       width
       height
+    }
+      images(first: 2) {
+        nodes {
+        id
+        url
+      altText
+      width
+      height
+      }
     }
     priceRange {
       minVariantPrice {
