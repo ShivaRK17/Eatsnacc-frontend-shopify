@@ -103,7 +103,7 @@ export default function AboutUs() {
                                     additionalTransfrom={0}
                                     arrows={false} // Disable default arrows
                                     centerMode={false}
-                                    containerClass="mx-2 md:mx-16 my-5"
+                                    containerClass="mx-2 my-5"
                                     draggable
                                     focusOnSelect={false}
                                     keyBoardControl
@@ -140,23 +140,33 @@ export default function AboutUs() {
                                     {resolvedProducts.nodes.map((product, index) => {
                                         return <Link to={useVariantUrl(product.handle)} key={index} className={`m-1 flex flex-1 flex-col rounded-3xl overflow-hidden relative`}>
                                             <div className='relative cursor-pointer'>
-                                                {product.featuredImage ? <Image
+                                                {/* {product.featuredImage ? <Image
                                                     alt={product.featuredImage.altText || product.title}
                                                     className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0'
                                                     aspectRatio="1/1"
                                                     data={product.featuredImage}
                                                     sizes="(min-width: 45em) 400px, 100vw"
                                                 /> : <img className='hover:opacity-0 transition duration-100 ease-in-out absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-                                                <img className='' src="/home/chips1.png" alt="" />
+                                                <img className='' src="/home/chips1.png" alt="" /> */}
+                                                {product.images.nodes[0] ? <Image
+                                                    alt={product.images.nodes[0].alt || product.title}
+                                                    className='hover:opacity-0 transition duration-100 ease-in-out h-full object-cover w-full absolute top-0 left-0'
+                                                    data={product.images.nodes[0]}
+                                                /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+                                                {product.images.nodes[1] ? <Image
+                                                    alt={product.images.nodes[1].alt || product.title}
+                                                    className='h-full object-cover w-full'
+                                                    data={product.images.nodes[1]}
+                                                /> : <Image data={product.images.nodes[1]} className='h-full object-cover w-full' src="/home/chips1.png" alt="" />}
                                             </div>
                                             <div className='bg-white p-4'>
                                                 <div className='flex justify-between'>
                                                     <span>{product.title}</span>
-                                                    <span className='text-sm'>$24.99</span>
+                                                    <span className='text-sm'>₹{product.priceRange.minVariantPrice.amount}</span>
                                                 </div>
                                                 <div className='flex justify-between'>
                                                     <span className='text-sm text-[#fdb716]'>puff variety pack</span>
-                                                    <span className='text-sm'>0.8oz bags</span>
+                                                    <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
                                                 </div>
                                             </div>
                                             <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
@@ -215,6 +225,18 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
       url
       width
       height
+    }
+      selectedOrFirstAvailableVariant {
+        weight
+      }
+      images(first: 2) {
+        nodes {
+        id
+        url
+      altText
+      width
+      height
+      }
     }
     priceRange {
       minVariantPrice {

@@ -37,10 +37,6 @@ const navItems = [
     title: "shop",
     columns: [
       {
-        title: "staff-picks",
-        url: "collections/staff-picks"
-      },
-      {
         title: "shop all",
         url: "collections/shop-all"
       },

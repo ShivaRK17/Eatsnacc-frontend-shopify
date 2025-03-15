@@ -11,10 +11,6 @@ const navItems = [
     title: "shop",
     columns: [
       {
-        title: "staff-picks",
-        url: "collections/staff-picks"
-      },
-      {
         title: "shop all",
         url: "collections/shop-all"
       },
@@ -104,11 +100,11 @@ export function Footer({ footer: footerPromise, header, publicStoreDomain }) {
     //   </Await>
     // </Suspense>
     <>
-      <div className='bg-[#51282b] md:p-14 p-5 py-14'>
+      <div className='bg-[#86d1d5] md:p-14 p-5 py-14'>
         <div className=' grid grid-cols-1 md:grid-cols-4 justify-between'>
           <div className='col-span-1'>
             <div className='flex flex-col items-center md:items-start'>
-              <img className='w-3/4' src="/logo.png" alt="" />
+              <img className='w-3/4' src="/footer/footer.png" alt="" />
               <div className='flex my-10 gap-10 justify-center md:justify-start'>
                 <Link><FaFacebook size={28} className="" color='white' /></Link>
                 <Link><FaTwitter size={28} className="" color='white' /></Link>

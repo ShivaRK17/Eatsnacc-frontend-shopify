@@ -185,28 +185,28 @@ export default function Product() {
   );
   const ChipsCard = ({ product }) => {
     const variantUrl = useVariantUrl(product.handle);
-    return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden relative'>
-      <div className='relative cursor-pointer'>
-      {product.images.nodes[0] ? <Image
-        alt={product.images.nodes[0].alt || product.title}
-        className='hover:opacity-0 transition duration-100 ease-in-out h-full object-cover w-full absolute top-0 left-0'
-        data={product.images.nodes[0]}
-      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-      {product.images.nodes[1] ? <Image
-        alt={product.images.nodes[1].alt || product.title}
-        className='h-full object-cover w-full'
-        data={product.images.nodes[1]}
-      /> : <Image data={product.images.nodes[1]} className='h-full object-cover w-full' src="/home/chips2.png" alt="" />}
+    return <Link to={variantUrl} className='flex flex-1 flex-col h-full relative shadow'>
+      <div className='relative cursor-pointer flex-1'>
+        {product.images.nodes[0] ? <Image
+          alt={product.images.nodes[0].alt || product.title}
+          className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0'
+          data={product.images.nodes[0]}
+        /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+        {product.images.nodes[1] ? <Image
+          alt={product.images.nodes[1].alt || product.title}
+          className=' w-full h-full object-cover bg-center bg-no-repeat'
+          data={product.images.nodes[1]}
+        /> : <Image data={product.images.nodes[1]} className='w-full h-full object-cover bg-center bg-no-repeat' src="/home/chips2.png" alt="" />}
       </div>
       <div className='bg-white p-4'>
         <div className='flex justify-between'>
           <span>{product.title}</span>
           {/* {JSON.stringify(product)} */}
-          <span className='text-sm'>{product.priceRange.minVariantPrice.amount}</span>
+          <span className='text-sm'>₹{product.priceRange.minVariantPrice.amount}</span>
         </div>
         <div className='flex justify-between'>
           <span className='text-sm text-[#fdb716]'>puff variety pack</span>
-          <span className='text-sm'>0.8oz bags</span>
+          <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
         </div>
       </div>
       <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
@@ -350,7 +350,7 @@ export default function Product() {
                         >
                           {response.products.nodes.map((e, ind) => {
                             return (
-                              <motion.div key={ind} className='m-1' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
+                              <motion.div key={ind} className='mx-1 rounded-3xl overflow-hidden h-full' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
                                 <ChipsCard key={e.id} product={e}>
 
                                 </ChipsCard>
@@ -385,6 +385,9 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
         currencyCode
       }
     }
+      selectedOrFirstAvailableVariant {
+        weight
+      }
       images(first: 2) {
         nodes {
         id

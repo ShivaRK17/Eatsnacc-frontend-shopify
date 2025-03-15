@@ -62,28 +62,28 @@ const CustomButtonGroup = ({ next, previous }) => (
 );
 const ChipsCard = ({ product }) => {
   const variantUrl = useVariantUrl(product.handle);
-  return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden relative shadow'>
-    <div className='relative cursor-pointer'>
+  return <Link to={variantUrl} className='flex flex-1 flex-col h-full relative shadow'>
+    <div className='relative cursor-pointer flex-1'>
       {product.images.nodes[0] ? <Image
         alt={product.images.nodes[0].alt || product.title}
-        className='hover:opacity-0 transition duration-100 ease-in-out w-full absolute top-0 left-0'
+        className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0'
         data={product.images.nodes[0]}
-      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full absolute top-0 left-0' src="/home/chips2.png" alt="" />}
+      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0' src="/home/chips2.png" alt="" />}
       {product.images.nodes[1] ? <Image
         alt={product.images.nodes[1].alt || product.title}
-        className=' w-full'
+        className=' w-full h-full object-cover bg-center bg-no-repeat'
         data={product.images.nodes[1]}
-      /> : <Image data={product.images.nodes[1]} className='w-full' src="/home/chips2.png" alt="" />}
+      /> : <Image data={product.images.nodes[1]} className='w-full h-full object-cover bg-center bg-no-repeat' src="/home/chips2.png" alt="" />}
     </div>
     <div className='bg-white p-4'>
       <div className='flex justify-between'>
         <span>{product.title}</span>
         {/* {JSON.stringify(product)} */}
-        <span className='text-sm'>{product.priceRange.minVariantPrice.amount}</span>
+        <span className='text-sm'>₹{product.priceRange.minVariantPrice.amount}</span>
       </div>
       <div className='flex justify-between'>
         <span className='text-sm text-[#fdb716]'>puff variety pack</span>
-        <span className='text-sm'>0.8oz bags</span>
+        <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
       </div>
     </div>
     <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
@@ -111,19 +111,19 @@ function loadDeferredData({ context }) {
 
 const aboutList = [
   {
-    img: "/home/abouts/oimage1.png",
-    title: "Made with Peas",
-    description: "Our chickpeas and yellow peas support a healthy and diverse farm by naturally keeping nutrients in the soil, where they should be."
+    img: "/home/abouts/image1.png",
+    title: "CLEAN, REAL INGREDIENTS",
+    description: "Nothing Weird Here!Our snacks are made with clean, wholesome ingredients – no artificial preservatives or funny chemicals. Just real food for real people.  "
   },
   {
-    img: "/home/abouts/oimage2.png",
-    title: "Packed with Protein & Fiber",
-    description: "Nothing but the good stuff here! Our snacks are packed with plant protein & fiber to keep you keepin' on. Thank you peas!"
+    img: "/home/abouts/image2.png",
+    title: "POWERED BY PROTEIN",
+    description: "Fuel Your Day! Fuel your day with protein-packed goodness! Our snacks give you the energy and satisfaction you need to keep going strong. Crunch, munch, and power up!  "
   },
   {
-    img: "/home/abouts/oimage3.png",
-    title: "Full of Far Out Flavor",
-    description: "We're all about Zero Snackrifice! No cardboard snacks here, our snacks are packed with Far Out Flavor so you don't have to choose between taste and eating better."
+    img: "/home/abouts/image3.png",
+    title: "FLAVOR THAT SLAPS",
+    description: "Zero Snackrifice! No bland bites here. Our bold flavors bring the fun back to healthy snacking, so you don’t have to choose between taste and eating better."
   },
 ]
 
@@ -182,17 +182,17 @@ export default function Homepage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4,
-              }} style={{ fontFamily: 'City Tour' }} className='text-6xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HEALTHY</motion.h2>
+              }} style={{ fontFamily: 'Acumin' }} className='text-6xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HEALTHY</motion.h2>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4, delay: 0.2
-              }} style={{ fontFamily: 'City Tour' }} className='text-6xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HITS</motion.h2>
+              }} style={{ fontFamily: 'Acumin' }} className='text-6xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HITS</motion.h2>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4, delay: 0.4
-              }} style={{ fontFamily: 'City Tour' }} className='text-6xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
+              }} style={{ fontFamily: 'Acumin' }} className='text-6xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
             {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-7xl font-bold tracking-wide text-[#51282b]'>YOUR MIND</h2> */}
             {/* <motion.p initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -203,30 +203,30 @@ export default function Homepage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4
-              }} className='rounded-full bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>SNACC now</motion.button>
+              }} className='rounded-full bg-[#86d1d5] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer'>snacc now</motion.button>
 
           </div>
         </div>
       </div>
-      <div className='px-14 hidden md:block'>
+      <div className='px-14 hidden md:flex items-center justify-center'>
         <div className='relative'>
-          <img className='w-full rounded-4xl' src="/home/hero.png" alt="" />
+          <img className='h-[85vh] rounded-4xl' src="/home/hero1.jpeg" alt="" />
           <div className='absolute ml-15 left-0 top-0 h-full flex flex-col justify-center '>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4,
-              }} style={{ fontFamily: 'City Tour' }} className='text-8xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HEALTHY</motion.h2>
+              }} style={{ fontFamily: 'Acumin' }} className='text-8xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HEALTHY</motion.h2>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4, delay: 0.2
-              }} style={{ fontFamily: 'City Tour' }} className='text-8xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HITS</motion.h2>
+              }} style={{ fontFamily: 'Acumin' }} className='text-8xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>HITS</motion.h2>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.4, delay: 0.4
-              }} style={{ fontFamily: 'City Tour' }} className='text-8xl text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
+              }} style={{ fontFamily: 'Acumin' }} className='text-8xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
             {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-9xl text-[#51282b]'>YOUR MIND</h2> */}
             {/* <motion.p initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -237,7 +237,7 @@ export default function Homepage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4
-              }} style={{ fontFamily: 'City Tour' }} className='rounded-xl bg-[#51282b] my-2 px-10 text-lg text-white py-1 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer tracking-wide'>SNACC now</motion.button>
+              }} className='rounded-xl bg-[#86d1d5] my-2 px-10 text-lg text-black py-1 w-fit hover:bg-black border-3 hover:border-black border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer tracking-wide'>snacc now</motion.button>
           </div>
         </div>
       </div>
@@ -263,7 +263,7 @@ export default function Homepage() {
       <div className='px-4 md:px-14'>
         <div className='bg-[#ffc604] rounded-4xl py-10'>
           <div className='px-4 md:px-16'>
-            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl text-[#fff2d8]'>chips just got hip </motion.h4>
+            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl text-[#fff2d8]'>no junk in this trunk</motion.h4>
           </div>
           <div className='w-full'>
             <Suspense fallback={<div className="text-center">Loading...</div>}>
@@ -312,7 +312,7 @@ export default function Homepage() {
                         >
                           {response.products.nodes.map((e, ind) => {
                             return (
-                              <motion.div key={ind} className='m-1' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
+                              <motion.div key={ind} className='mx-1 rounded-3xl overflow-hidden h-full' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
                                 <ChipsCard product={e}>
 
                                 </ChipsCard>
@@ -340,9 +340,9 @@ export default function Homepage() {
         <div className="marquee-container">
           {/* First marquee */}
           <div className="marquee flex">
-            <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
-            <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
-            <div style={{ fontFamily: 'City Tour' }} className='text-[70px] ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
           </div>
 
           {/* Second marquee */}
@@ -357,15 +357,15 @@ export default function Homepage() {
           {aboutList.map((list, ind) => (
             <div key={ind} className='flex w-full md:w-1/3 p-4 flex-col  items-center text-center text-[#51282b]'>
               <img className='' src={list.img} alt="" />
-              {/* <h4 style={{ fontFamily: "City Tour" }} className='text-2xl tracking-wide my-3'>{list.title}</h4>
-              <p className='text-sm'>{list.description}</p> */}
+              <h4 style={{ fontFamily: "Acumin" }} className='text-2xl font-extrabold tracking-wide my-3'>{list.title}</h4>
+              <p className='text-sm'>{list.description}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div className='flex items-center justify-center my-10'>
-        <button style={{ fontFamily: "City Tour" }} className='rounded-2xl bg-[#51282b] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>more about SNACC</button>
+        <button className='rounded-2xl bg-[#86d1d5] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer'>more about SNACC</button>
       </div>
 
       <div className='px-4 md:px-14 my-26 flex md:flex-row flex-col'>
@@ -374,7 +374,7 @@ export default function Homepage() {
           <img className='absolute right-10 -top-10' src="/home/varpacknew.svg" alt="" />
         </div>
         <div className='md:w-1/2 flex flex-col p-4 md:px-10'>
-          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl md:text-5xl text-[#41282b] tracking-wide'>Our Cheeziest Variety Pack</motion.h4 >
+          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl md:text-5xl text-[#41282b] tracking-wide'>Build your own box</motion.h4 >
           <p className='text-[#51282b] text-lg my-5'>For the Cheese lover who wants all the cheeze feels, minus the guilt. Stock up with 9 bags of Vegan White Cheddar and 9 bags of Vegan Nacho Puffs!</p>
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <Await resolve={data.recommendedProducts}>
@@ -422,7 +422,7 @@ export default function Homepage() {
                       >
                         {response.products.nodes.map((e) => {
                           return (
-                            <div key={e.id}>
+                            <div key={e.id} className='h-full rounded-3xl overflow-hidden'>
                               <ChipsCard product={e}>
 
                               </ChipsCard>
@@ -502,7 +502,7 @@ export default function Homepage() {
                           shop {e.url}
                         </Link>
                       </div>
-                      <img src="/home/testi.png" className='absolute right-2 -top-2 w-20' alt="" />
+                      <img src="/home/testi.png" className='absolute right-2 -top-5 w-18' alt="" />
                     </div>
                   );
                 })}
@@ -522,9 +522,9 @@ export default function Homepage() {
       <div className='px-4 md:px-14 my-20'>
         <div className='flex justify-between flex-col md:flex-row'>
           <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#51282b]'>power to the peaple</motion.h4>
-          <button className='rounded-full bg-[#51282b] px-7 py-3 my-3 md:my-0 text-sm  text-white w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>follow @SNACC</button>
+          <a target='_blank' href='https://instagram.com/eat.SNACC' className='rounded-full bg-[#51282b] px-7 py-3 my-3 md:my-0 text-sm  text-white w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>follow @eat.SNACC</a>
         </div>
-        <div>
+        {/* <div>
           <Carousel
             additionalTransfrom={0}
             arrows={true} // Disable default arrows
@@ -570,7 +570,7 @@ export default function Homepage() {
               );
             })}
           </Carousel>
-        </div>
+        </div> */}
 
       </div>
     </div>
@@ -667,24 +667,27 @@ const FEATURED_COLLECTION_QUERY = `#graphql
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
       fragment RecommendedProduct on Product {
         id
-    title
-      handle
-      priceRange {
-        minVariantPrice {
-        amount
-        currencyCode
+        title
+        handle
+        priceRange {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        images(first: 2) {
+          nodes {
+            id
+            url
+            altText
+            width
+            height
+          }
+        }
+          selectedOrFirstAvailableVariant {
+        weight
       }
-    }
-      images(first: 2) {
-        nodes {
-        id
-        url
-      altText
-      width
-      height
       }
-    }
-  }
       query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
       @inContext(country: $country, language: $language) {
         products(first: 4, sortKey: UPDATED_AT, reverse: true) {
