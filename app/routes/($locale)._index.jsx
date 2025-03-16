@@ -129,31 +129,20 @@ const aboutList = [
 
 const testimonials = [
   {
-    "name": "Vicky",
-    "said": "“This snack is my guilty pleasure (without the guilt). Made out of chickpeas, it has higher protein than other snacks and the taste is amazing.”",
+    "name": "Vikram",
+    "said": "\"I'm hooked! I grab a bag every day to satisfy my snack cravings, and the best part? No guilt afterward! Light, crunchy, and packed with flavor—I highly recommend these!\"",
     "url": "puffs"
   },
   {
-    "name": "Jessica",
-    "said": "\"Delicious! Watch out Cool Ranch Doritos, there’s a better chip in town! Melts in your mouth...my new favorite. Can easily eat a whole bag \"",
-    "url": "chips"
+    "name": "Priya",
+    "said": "\"Absolutely delicious! The perfect mix of crunch and spice, just the way I love my snacks. Once you start, you can’t stop—I could easily finish a whole bag! \"",
+    "url": "makhana"
   },
   {
-    "name": "Anita",
-    "said": "\"I’m addicted! I have one bag everyday to curb my snack cravings & the best part is not having to feel guilty about it afterwards! I personally recommend these!\"",
-    "url": "straws"
+    "name": "Sejal",
+    "said": "\"This snack is my guilt-free indulgence! Made with flavored makhana, it’s light yet so satisfying. A tasty, healthier alternative to regular munchies!\"",
+    "url": "dry-fruits"
   },
-  {
-    "name": "Lex",
-    "said": "\"Super duper yummy, love these and so do my nonvegan family members! They don't leave a weird aftertaste like most of these kinds of snacks tend to do\"",
-    "url": "puffs"
-  },
-  {
-    "name": "Alicia",
-    "said": "\"Everything about this snack is *chef’s kiss*! I hate chickpeas but this doesn’t taste like them at all. 4 servings in a bag… But a bag was gone by myself in a day. :)\"",
-    "url": "puffs"
-  },
-
 ]
 
 export default function Homepage() {
@@ -501,7 +490,7 @@ export default function Homepage() {
                       <p style={{ fontFamily: 'City Tour' }} className='mb-3 mt-2'>{e.name}</p>
                       <p className='text-lg'>{e.said}</p>
                       <div className='w-full flex justify-end underline underline-offset-10 mt-3'>
-                        <Link to={`/shop/collections/${e.url}`}>
+                        <Link to={`/collections/${e.url}`}>
                           shop {e.url}
                         </Link>
                       </div>
