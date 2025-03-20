@@ -18,7 +18,7 @@ const ProductMediaGallery = ({ media, selectedVariantImage }) => {
   return (
     <>
       <div className="hidden md:flex flex-col md:w-1/2">
-        <div className="mb-4 rounded-4xl overflow-hidden">
+        <div className="mb-4  overflow-hidden">
           <img
             src={selectedImage || media.nodes[0]?.image?.url}
             alt="Selected product"
@@ -32,7 +32,7 @@ const ProductMediaGallery = ({ media, selectedVariantImage }) => {
                 <button
                   key={item.id}
                   onClick={() => setSelectedImage(item.image.url)}
-                  className={`rounded-4xl overflow-hidden border-4 col-span-1 cursor-pointer ${selectedImage === item.image.url ? 'border-[#51282b]' : 'border-transparent'
+                  className={` overflow-hidden border-4 col-span-1 cursor-pointer ${selectedImage === item.image.url ? 'border-[#000000]' : 'border-transparent'
                     }`}
                 >
                   <img
@@ -48,7 +48,7 @@ const ProductMediaGallery = ({ media, selectedVariantImage }) => {
         </div>
       </div>
       <div className="flex md:hidden">
-        <Carousel className="md:hidden block w-full rounded-4xl overflow-hidden z-0" responsive={{
+        <Carousel className="md:hidden block w-full  overflow-hidden z-0" responsive={{
           desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 4,
@@ -71,7 +71,7 @@ const ProductMediaGallery = ({ media, selectedVariantImage }) => {
                 <button
                   key={item.id}
                   onClick={() => setSelectedImage(item.image.url)}
-                  className={`rounded-4xl overflow-hidden mx-1 col-span-1 cursor-pointer border-transparent'
+                  className={` overflow-hidden mx-1 col-span-1 cursor-pointer border-transparent'
                     }`}
                 >
                   <img

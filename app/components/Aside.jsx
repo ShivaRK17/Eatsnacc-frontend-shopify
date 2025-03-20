@@ -47,7 +47,7 @@ export function Aside({ children, heading, type }) {
       <aside className='z-50 w-full md:w-1/2'>
         <div className='m-3 md:m-5 h-full relative bg-white rounded-l-4xl rounded-r-xl overflow-x-hidden'>
           <div className='overflow-y-scroll overflow-x-hidden px-4 md:px-10 p-10 h-full'>
-            <header className='pb-5 text-[#51282b] tracking-wide font-bold'>
+            <header className='pb-5 text-black tracking-wide font-bold'>
               <h3 style={{ fontFamily: "Motel Xenia" }} className='text-5xl md:text-4xl'>{heading}</h3>
               <button className="close reset cursor-pointer" onClick={close} aria-label="Close">
                 <IoClose size={26} />

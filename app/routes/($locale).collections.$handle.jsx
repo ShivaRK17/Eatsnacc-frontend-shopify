@@ -106,7 +106,7 @@ const links = [
 
 const ChipsCard = ({ product }) => {
   const variantUrl = useVariantUrl(product.handle);
-  return <Link to={variantUrl} className='flex flex-1 flex-col rounded-3xl overflow-hidden h-full relative shadow'>
+  return <Link to={variantUrl} className='flex flex-1 flex-col  overflow-hidden h-full relative shadow'>
     <div className='relative cursor-pointer flex-1'>
       {product.images.nodes[0] ? <Image
         alt={product.images.nodes[0].alt || product.title}
@@ -119,7 +119,7 @@ const ChipsCard = ({ product }) => {
         data={product.images.nodes[1]}
       /> : <Image data={product.images.nodes[1]} className='w-full h-full object-cover bg-center bg-no-repeat' src="/home/chips2.png" alt="" />}
     </div>
-    <div className='bg-white p-4'>
+    <div className='bg-white p-4 zigzag-bottom'>
       <div className='flex justify-between'>
         <span>{product.title}</span>
         {/* {JSON.stringify(product)} */}
@@ -130,7 +130,26 @@ const ChipsCard = ({ product }) => {
         <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
       </div>
     </div>
-    <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
+    <div className='absolute top-4 left-4  bg-white text-black p-1 px-3'>18 pack</div>
+    <style jsx>{`
+        .zigzag-bottom {
+          position: relative;
+          margin-top: -1px; /* Remove any gap between image and text div */
+        }
+        .zigzag-bottom::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 20px;
+          background: linear-gradient(-45deg, #fff 12px, transparent 0), linear-gradient(45deg, #fff 12px, transparent 0);
+          background-position: left top;
+          background-repeat: repeat-x;
+          background-size: 24px 20px;
+          transform: translateY(-100%);
+        }
+      `}</style>
   </Link>
 }
 
@@ -165,10 +184,10 @@ export default function Collection() {
     // </div>
     <div className="bg-[#fdb716] p-4 md:p-14">
       <div className='flex justify-between my-10 md:text-start text-center flex-col md:flex-row'>
-        <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#51282b]'>{collection.title}</motion.h4>
+        <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-black'>{collection.title}</motion.h4>
         <div className='flex flex-wrap gap-4 items-center justify-center text-lg my-5 md:my-0'>
           {collections.nodes.map((link, index) => (
-            <Link key={index} to={`/collections/${link.handle}`} className={`rounded-full text-sm md:text-base p-2 px-9 ${link.title === collection.title ? "text-white bg-[#51282b]" : "text-[#51282b] bg-white"}`}>
+            <Link key={index} to={`/collections/${link.handle}`} className={` text-sm md:text-base p-2 px-9 ${link.title === collection.title ? "text-white bg-[#000000]" : "text-black bg-white"}`}>
               {link.title}
             </Link>
           ))}

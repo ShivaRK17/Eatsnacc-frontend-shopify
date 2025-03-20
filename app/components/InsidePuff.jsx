@@ -73,7 +73,7 @@ const CompareSlider = ({ beforeImage = "/product/before.png", afterImage = "/pro
         >
             <div 
                 ref={containerRef} 
-                className="relative w-full h-fit rounded-4xl overflow-hidden"
+                className="relative w-full h-fit  overflow-hidden"
                 style={{ cursor: isDragging ? 'col-resize' : 'default' }}
             >
                 {/* Before Image - Initial Image */}
@@ -99,13 +99,13 @@ const CompareSlider = ({ beforeImage = "/product/before.png", afterImage = "/pro
 
                 {/* Slider Line */}
                 <div
-                    className="absolute top-0 h-full bg-[#51282b] pointer-events-none"
+                    className="absolute top-0 h-full bg-[#000000] pointer-events-none"
                     style={{ left: `${sliderPosition}%`, width: "4px" }}
                 />
 
                 {/* Slider Handle */}
                 <div
-                    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#51282b] rounded-full flex items-center justify-center cursor-grab z-10"
+                    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#000000]  flex items-center justify-center cursor-grab z-10"
                     style={{ left: `${sliderPosition}%` }}
                     onMouseDown={handleMouseDown}
                     onTouchStart={handleMouseDown}

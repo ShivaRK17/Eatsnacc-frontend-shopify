@@ -12,8 +12,8 @@ export function CartSummary({ cart, layout }) {
   return (
     <div aria-labelledby="cart-summary" className={className}>
       <div style={{ fontFamily: "Motel Xenia" }} className='flex justify-between text-4xl mt-5'>
-        <h4 className='text-[#51282b] font-bold tracking-wide'>Total</h4>
-        <dl className="text-[#51282b] font-bold tracking-wide cart-subtotal">
+        <h4 className='text-black font-bold tracking-wide'>Total</h4>
+        <dl className="text-black font-bold tracking-wide cart-subtotal">
           <dd>
             {cart.cost?.subtotalAmount?.amount ? (
               <Money data={cart.cost?.subtotalAmount} />
@@ -23,7 +23,7 @@ export function CartSummary({ cart, layout }) {
           </dd>
         </dl>
       </div>
-      <p className='text-[#51282b] opacity-60 my-3 text-sm md:text-xl'>Taxes and shipping calculated at checkout</p>
+      <p className='text-black opacity-60 my-3 text-sm md:text-xl'>Taxes and shipping calculated at checkout</p>
       {/* <CartDiscounts discountCodes={cart.discountCodes} />
       <CartGiftCard giftCardCodes={cart.appliedGiftCards} /> */}
       <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
@@ -41,12 +41,12 @@ function CartCheckoutActions({ checkoutUrl }) {
     <div className='flex gap-4 md:justify-start justify-center'>
 
       <Link to={'/cart'}>
-        <button target="_self" className='rounded-full bg-[#51282b] px-6 md:px-14 text-sm md:text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>
+        <button target="_self" className=' bg-[#000000] px-6 md:px-14 text-sm md:text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#000000] hover:text-black cursor-pointer'>
           View Cart
         </button>
       </Link>
       <Link to={checkoutUrl}>
-        <button target="_self" className='rounded-full bg-[#51282b] px-6 md:px-14 text-sm md:text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>
+        <button target="_self" className=' bg-[#000000] px-6 md:px-14 text-sm md:text-lg text-white py-4 w-fit hover:bg-transparent border-3 border-[#000000] hover:text-black cursor-pointer'>
           Checkout
         </button>
       </Link>

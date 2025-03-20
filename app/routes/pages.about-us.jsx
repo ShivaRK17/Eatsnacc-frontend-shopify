@@ -54,16 +54,16 @@ const handlePrevious = (ref) => {
 const CustomButtonGroup = ({ next, previous }) => (
     <div className="flex justify-end m-4 mx-16">
         <button
-            className="p-4 rounded-full mx-2 cursor-pointer border-[#51282b] border-1 bg-transparent"
+            className="p-4  mx-2 cursor-pointer border-[#000000] border-1 bg-transparent"
             onClick={previous}
         >
-            <FaAngleLeft size={20} color='#51282b' />
+            <FaAngleLeft size={20} color='#000000' />
         </button>
         <button
-            className="p-4 rounded-full mx-2 cursor-pointer border-[#51282b] border-1 bg-transparent"
+            className="p-4  mx-2 cursor-pointer border-[#000000] border-1 bg-transparent"
             onClick={next}
         >
-            <FaAngleRight size={20} color='#51282b' />
+            <FaAngleRight size={20} color='#000000' />
         </button>
     </div>
 );
@@ -75,11 +75,11 @@ export default function AboutUs() {
     const carouselRef = useRef(null);
     return <>
         <div className="px-4 md:px-14 py-3">
-            <div className="rounded-4xl overflow-hidden flex flex-col md:flex-row">
+            <div className=" overflow-hidden flex flex-col md:flex-row">
                 <div className="md:w-1/2">
                     <img src="/about-us/hero.png" alt="" />
                 </div>
-                <div className="md:w-1/2 bg-[#fdb716] flex flex-col items-center justify-center text-[#51282b]">
+                <div className="md:w-1/2 bg-[#fdb716] flex flex-col items-center justify-center text-black">
                     <div className="md:w-3/4 flex flex-col items-center justify-center text-center mx-7 md:mx-0 my-10 md:my-0">
                         <h3 style={{ fontFamily: "City Tour" }} className="text-4xl md:text-4xl tracking-wide">We’re on a mission to shake things up</h3>
                         <p className="text-xl">Forget tie-dye t-shirts, dreadlocks and lava lamps…it’s the spirit of the era that lives on in us. Join the freedom fighters, snacktivists and chickpea charmers who are reinventing snacking, one pea at time!</p>
@@ -87,10 +87,10 @@ export default function AboutUs() {
                 </div>
             </div>
             <div className="py-5 my-10">
-                <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl md:text-6xl tracking-wide font-bold text-[#51282b]'>meet the snacc pack</motion.h4>
+                <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl md:text-6xl tracking-wide font-bold text-black'>meet the snacc pack</motion.h4>
                 <div className="flex justify-between my-2 flex-col md:flex-row">
-                    <p className="text-xl md:text-2xl text-[#51282b] opacity-80">Snacks that taste good and do good for the Mind, Body & Soul.</p>
-                    <Link to={'/collections/all'} className=" hover:underline text-2xl text-[#51282b] flex items-center">View all <FaAngleRight className="ml-5" size={20} /></Link>
+                    <p className="text-xl md:text-2xl text-black opacity-80">Snacks that taste good and do good for the Mind, Body & Soul.</p>
+                    <Link to={'/collections/all'} className=" hover:underline text-2xl text-black flex items-center">View all <FaAngleRight className="ml-5" size={20} /></Link>
                 </div>
             </div>
             <div className='w-full'>
@@ -138,7 +138,7 @@ export default function AboutUs() {
                                 >
 
                                     {resolvedProducts.nodes.map((product, index) => {
-                                        return <Link to={useVariantUrl(product.handle)} key={index} className={`m-1 flex flex-1 flex-col rounded-3xl overflow-hidden relative`}>
+                                        return <Link to={useVariantUrl(product.handle)} key={index} className={`m-1 flex flex-1 flex-col  overflow-hidden relative`}>
                                             <div className='relative cursor-pointer'>
                                                 {/* {product.featuredImage ? <Image
                                                     alt={product.featuredImage.altText || product.title}
@@ -169,7 +169,7 @@ export default function AboutUs() {
                                                     <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
                                                 </div>
                                             </div>
-                                            <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
+                                            <div className='absolute top-4 left-4  bg-white text-black p-1 px-3'>18 pack</div>
                                         </Link>
                                     })}
                                 </Carousel>
@@ -181,7 +181,7 @@ export default function AboutUs() {
             </div>
             <ScrollSyncSection />
             <div className='w-full my-20'>
-                <video className='rounded-4xl w-full' controls >
+                <video className=' w-full' controls >
                     <source src="./home/vid.mp4" type="video/mp4" />
                 </video>
             </div>

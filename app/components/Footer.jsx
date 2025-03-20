@@ -124,16 +124,16 @@ export function Footer({ footer: footerPromise, header, publicStoreDomain }) {
           </div>
           <div className='col-span-1 md:mx-4 my-10 md:my-0'>
             <h5 style={{ fontFamily: "City Tour" }} className='text-4xl tracking-wide  text-white'>Subscribe for 10% off your first order</h5>
-            <div className='bg-transparent rounded-full border-2 flex my-2 border-white p-5'>
+            <div className='bg-transparent  border-2 flex my-2 border-white p-5'>
               <input type="email" placeholder='E-mail' className='outline-none flex-1 text-white font-sans' />
-              <div className='rounded-full bg-white h-6 w-6 flex items-center justify-center'>
-                <FaArrowRight color='#51282b' />
+              <div className=' bg-white h-6 w-6 flex items-center justify-center'>
+                <FaArrowRight color='#000000' />
               </div>
             </div>
           </div>
         </div>
         <div className='flex w-full justify-between mt-10 text-sm text-white flex-col md:flex-row md:items-start items-center'>
-          <span>SNACC® All Rights Reservered. © 2025 SNACC, Inc.</span>
+          <span>snacc® All Rights Reservered. © 2025 snacc, Inc.</span>
           <span>Site by ShivaRK17</span>
         </div>
       </div>

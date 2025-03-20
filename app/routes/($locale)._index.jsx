@@ -7,6 +7,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoStarSharp } from 'react-icons/io5';
 import { motion } from 'motion/react';
 import { useVariantUrl } from '~/lib/variants';
+import Marquee from "react-simple-marquee"
 
 /**
  * @type {MetaFunction}
@@ -45,49 +46,88 @@ async function loadCriticalData({ context }) {
   };
 }
 const CustomButtonGroup = ({ next, previous }) => (
-  <div className="flex justify-end m-4 mx-16">
+  <div className="flex justify-end m-2 mx-16">
     <button
-      className="p-4 rounded-full mx-2 cursor-pointer border-[#51282b] border-1 bg-transparent"
+      className="p-3  mx-2 cursor-pointer border-[#000000] border-1 bg-transparent"
       onClick={previous}
     >
-      <FaAngleLeft size={20} color='#51282b' />
+      <FaAngleLeft size={20} color='#000000' />
     </button>
     <button
-      className="p-4 rounded-full mx-2 cursor-pointer border-[#51282b] border-1 bg-transparent"
+      className="p-3  mx-2 cursor-pointer border-[#000000] border-1 bg-transparent"
       onClick={next}
     >
-      <FaAngleRight size={20} color='#51282b' />
+      <FaAngleRight size={20} color='#000000' />
     </button>
   </div>
 );
 const ChipsCard = ({ product }) => {
   const variantUrl = useVariantUrl(product.handle);
-  return <Link to={variantUrl} className='flex flex-1 flex-col h-full relative shadow'>
-    <div className='relative cursor-pointer flex-1'>
-      {product.images.nodes[0] ? <Image
-        alt={product.images.nodes[0].alt || product.title}
-        className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0'
-        data={product.images.nodes[0]}
-      /> : <Image data={product.images.nodes[0]} className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0' src="/home/chips2.png" alt="" />}
-      {product.images.nodes[1] ? <Image
-        alt={product.images.nodes[1].alt || product.title}
-        className=' w-full h-full object-cover bg-center bg-no-repeat'
-        data={product.images.nodes[1]}
-      /> : <Image data={product.images.nodes[1]} className='w-full h-full object-cover bg-center bg-no-repeat' src="/home/chips2.png" alt="" />}
-    </div>
-    <div className='bg-white p-4'>
-      <div className='flex justify-between'>
-        <span>{product.title}</span>
-        {/* {JSON.stringify(product)} */}
-        <span className='text-sm'>₹{product.priceRange.minVariantPrice.amount}</span>
+  return (
+    <Link to={variantUrl} className='flex flex-1 flex-col h-full relative shadow'>
+      <div className='relative cursor-pointer flex-1'>
+        {product.images.nodes[0] ? (
+          <Image
+            alt={product.images.nodes[0].alt || product.title}
+            className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0'
+            data={product.images.nodes[0]}
+          />
+        ) : (
+          <Image 
+            data={product.images.nodes[0]} 
+            className='hover:opacity-0 transition duration-100 ease-in-out w-full h-full object-cover bg-center bg-no-repeat absolute top-0 left-0' 
+            src="/home/chips2.png" 
+            alt="" 
+          />
+        )}
+        {product.images.nodes[1] ? (
+          <Image
+            alt={product.images.nodes[1].alt || product.title}
+            className='w-full h-full object-cover bg-center bg-no-repeat'
+            data={product.images.nodes[1]}
+          />
+        ) : (
+          <Image 
+            data={product.images.nodes[1]} 
+            className='w-full h-full object-cover bg-center bg-no-repeat' 
+            src="/home/chips2.png" 
+            alt="" 
+          />
+        )}
       </div>
-      <div className='flex justify-between'>
-        <span className='text-sm text-[#fdb716]'>puff variety pack</span>
-        <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
+      <div className='bg-white p-4 zigzag-bottom'>
+        <div className='flex justify-between'>
+          <span>{product.title}</span>
+          <span className='text-sm'>₹{product.priceRange.minVariantPrice.amount}</span>
+        </div>
+        <div className='flex justify-between'>
+          <span className='text-sm text-[#fdb716]'>puff variety pack</span>
+          <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
+        </div>
       </div>
-    </div>
-    <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
-  </Link>
+      <div className='absolute top-4 left-4 bg-white text-black p-1 px-3'>18 pack</div>
+      
+      <style jsx>{`
+        .zigzag-bottom {
+          position: relative;
+          margin-top: -1px; /* Remove any gap between image and text div */
+        }
+        .zigzag-bottom::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 20px;
+          background: linear-gradient(-45deg, #fff 12px, transparent 0), linear-gradient(45deg, #fff 12px, transparent 0);
+          background-position: left top;
+          background-repeat: repeat-x;
+          background-size: 24px 20px;
+          transform: translateY(-100%);
+        }
+      `}</style>
+    </Link>
+  );
 }
 /**
  * Load data for rendering content below the fold. This data is deferred and will be
@@ -165,7 +205,7 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       <div className='px-4 flex md:hidden'>
         <div className='relative'>
-          <img className='w-full rounded-4xl' src="/home/heromobile.png" alt="" />
+          <img className='w-full ' src="/home/heromobile.png" alt="" />
           <div className='absolute top-0 left-0 w-full flex flex-col items-center justify-center pt-5'>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -182,24 +222,24 @@ export default function Homepage() {
               transition={{
                 duration: 0.4, delay: 0.4
               }} style={{ fontFamily: 'Acumin' }} className='text-6xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
-            {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-7xl font-bold tracking-wide text-[#51282b]'>YOUR MIND</h2> */}
+            {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-7xl font-bold tracking-wide text-black'>YOUR MIND</h2> */}
             {/* <motion.p initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4,
-              }} className='text-lg my-2 text-[#51282b]'>Changing snacking one pea at a time.</motion.p> */}
+              }} className='text-lg my-2 text-black'>Changing snacking one pea at a time.</motion.p> */}
             <motion.button initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4
-              }} className='rounded-full bg-[#86d1d5] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer'>snacc now</motion.button>
+              }} className=' bg-[#86d1d5] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer'>snacc now</motion.button>
 
           </div>
         </div>
       </div>
       <div className='px-14 hidden md:flex items-center justify-center'>
-        <div className='relative'>
-          <img className='h-[85vh] rounded-4xl' src="/home/hero1.jpeg" alt="" />
+        <div className='relative bg-red-400'>
+          <img className='h-[85vh] ' src="/home/hero1.jpeg" alt="" />
           <div className='absolute ml-15 left-0 top-0 h-full flex flex-col justify-center '>
             <motion.h2 initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -216,17 +256,17 @@ export default function Homepage() {
               transition={{
                 duration: 0.4, delay: 0.4
               }} style={{ fontFamily: 'Acumin' }} className='text-8xl font-extrabold text-[#fff2d8] drop-shadow-[5px_4.3px_0.5px_rgba(0,0,0,0.8),1px_0_1px_rgba(0,0,0),0_1px_1px_rgba(0,0,0),-1px_0_1px_rgba(0,0,0),0_-1px_1px_rgba(0,0,0)]'>DIFFERENT</motion.h2>
-            {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-9xl text-[#51282b]'>YOUR MIND</h2> */}
+            {/* <h2 style={{ fontFamily: 'Motel Xenia' }} className='text-9xl text-black'>YOUR MIND</h2> */}
             {/* <motion.p initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4,
-              }} className='text-xl my-2 text-[#51282b]'>Changing snacking one pea at a time.</motion.p> */}
+              }} className='text-xl my-2 text-black'>Changing snacking one pea at a time.</motion.p> */}
             <motion.button initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.4
-              }} className='rounded-xl bg-[#86d1d5] my-2 px-10 text-lg text-black py-1 w-fit hover:bg-black border-3 hover:border-black border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer tracking-wide'>snacc now</motion.button>
+              }} className=' bg-[#86d1d5] my-2 px-10 text-lg text-black py-1 w-fit hover:bg-black border-3 hover:border-black border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer tracking-wide'>snacc now</motion.button>
           </div>
         </div>
       </div>
@@ -253,9 +293,9 @@ export default function Homepage() {
         </div>
       </div>
       <div className='px-4 md:px-14'>
-        <div className='bg-[#ffc604] rounded-4xl py-10'>
+        <div className='bg-[#ffc604]  py-2'>
           <div className='px-4 md:px-16'>
-            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl text-[#fff2d8]'>no junk in this trunk</motion.h4>
+            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl text-[#000]'>no junk in this trunk</motion.h4>
           </div>
           <div className='w-full'>
             <Suspense fallback={<div className="text-center">Loading...</div>}>
@@ -304,7 +344,7 @@ export default function Homepage() {
                         >
                           {response.products.nodes.map((e, ind) => {
                             return (
-                              <motion.div key={ind} className='mx-1 rounded-3xl overflow-hidden h-full' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
+                              <motion.div key={ind} className='mx-1  overflow-hidden h-full' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
                                 <ChipsCard product={e}>
 
                                 </ChipsCard>
@@ -331,11 +371,14 @@ export default function Homepage() {
         </Marquee> */}
         <div className="marquee-container">
           {/* First marquee */}
-          <div className="marquee flex">
-            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
-            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
-            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0)] flex items-center'>HEALTH HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
-          </div>
+          {/* <div className="marquee flex">
+            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0),5px_5px_0px_rgba(0,0,0)] flex items-center'>HEALTHY HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0),5px_5px_0px_rgba(0,0,0)] flex items-center'>HEALTHY HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+            <div style={{ fontFamily: 'Acumin' }} className='text-[70px] font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0),5px_5px_0px_rgba(0,0,0)] flex items-center'>HEALTHY HITS DIFFERENT <img className='mx-5 h-[30%]' src='/peablue.png' alt='txt' /></div>
+          </div> */}
+          <Marquee >
+            <div className='flex text-nowrap items-center'><span style={{ fontFamily: 'Acumin' }} className='text-[70px] h-full font-bold ml-30 text-[#86D1D5] tracking-wider drop-shadow-[2px_0_0px_rgba(0,0,0),0_2px_0px_rgba(0,0,0),-2px_0_0px_rgba(0,0,0),0_-2px_0px_rgba(0,0,0),5px_5px_0px_rgba(0,0,0)]'>HEALTHY HITS DIFFERENT </span><img className='mx-5 h-10' src='/peablue.png' alt='txt' /></div>
+          </Marquee>
 
           {/* Second marquee */}
           {/* <div className="marquee2">
@@ -347,27 +390,27 @@ export default function Homepage() {
       <div className='px-4 md:px-14'>
         <div className='flex flex-wrap'>
           {aboutList.map((list, ind) => (
-            <div key={ind} className='flex w-full md:w-1/3 p-4 flex-col  items-center text-center text-[#51282b]'>
+            <div key={ind} className='flex w-full md:w-1/3 p-4 flex-col  items-center text-center text-black'>
               <img className='' src={list.img} alt="" />
               <h4 style={{ fontFamily: "Acumin" }} className='text-2xl font-extrabold tracking-wide my-3'>{list.title}</h4>
-              <p className='text-sm'>{list.description}</p>
+              <p style={{fontFamily:"Acumin"}} className=''>{list.description}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div className='flex items-center justify-center my-10'>
-        <button className='rounded-2xl bg-[#86d1d5] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer'>more about SNACC</button>
+        <button className=' bg-[#86d1d5] px-10 text-base mt-4 text-white py-3 w-fit hover:bg-transparent border-3 border-[#86d1d5] hover:text-[#86d1d5] cursor-pointer'>more about snacc</button>
       </div>
 
       <div className='px-4 md:px-14 my-26 flex md:flex-row flex-col'>
         <div className='md:w-1/2 relative'>
-          <img src="/home/varpack.png" className='rounded-4xl' alt="" />
+          <img src="/home/varpack.png" className='' alt="" />
           <img className='absolute right-10 -top-10' src="/home/varpacknew.svg" alt="" />
         </div>
         <div className='md:w-1/2 flex flex-col p-4 md:px-10'>
-          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl md:text-5xl text-[#41282b] tracking-wide'>Build your own box</motion.h4 >
-          <p className='text-[#51282b] text-lg my-5'>For the Cheese lover who wants all the cheeze feels, minus the guilt. Stock up with 9 bags of Vegan White Cheddar and 9 bags of Vegan Nacho Puffs!</p>
+          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl md:text-5xl text-black tracking-wide'>Build your own box</motion.h4 >
+          <p className='text-black text-lg my-5'>For the Cheese lover who wants all the cheeze feels, minus the guilt. Stock up with 9 bags of Vegan White Cheddar and 9 bags of Vegan Nacho Puffs!</p>
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <Await resolve={data.recommendedProducts}>
               {(response) => (
@@ -414,7 +457,7 @@ export default function Homepage() {
                       >
                         {response.products.nodes.map((e) => {
                           return (
-                            <div key={e.id} className='h-full rounded-3xl overflow-hidden'>
+                            <div key={e.id} className='h-full  overflow-hidden'>
                               <ChipsCard product={e}>
 
                               </ChipsCard>
@@ -435,7 +478,7 @@ export default function Homepage() {
       </div>
 
       <div className='px-4 md:px-14'>
-        <div className='w-full p-3 md:p-16 rounded-4xl bg-[#fdb716]'>
+        <div className='w-full p-3 md:px-16  bg-[#fdb716]'>
           <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#fff2d8]'>why they trust us</motion.h4>
           <div className='w-full'>
             <div className="relative">
@@ -479,13 +522,13 @@ export default function Homepage() {
               >
                 {testimonials.map((e, ind) => {
                   return (
-                    <div key={ind} className='m-2 relative bg-white rounded-4xl p-10 flex flex-col text-start text-[#51282b] text-2xl'>
+                    <div key={ind} className='m-2 relative bg-white  p-10 flex flex-col text-start text-black text-2xl'>
                       <div className='flex gap-1 '>
-                        <IoStarSharp size={26} color='#51282b' />
-                        <IoStarSharp size={26} color='#51282b' />
-                        <IoStarSharp size={26} color='#51282b' />
-                        <IoStarSharp size={26} color='#51282b' />
-                        <IoStarSharp size={26} color='#51282b' />
+                        <IoStarSharp size={26} color='#000000' />
+                        <IoStarSharp size={26} color='#000000' />
+                        <IoStarSharp size={26} color='#000000' />
+                        <IoStarSharp size={26} color='#000000' />
+                        <IoStarSharp size={26} color='#000000' />
                       </div>
                       <p style={{ fontFamily: 'City Tour' }} className='mb-3 mt-2'>{e.name}</p>
                       <p className='text-lg'>{e.said}</p>
@@ -506,15 +549,15 @@ export default function Homepage() {
       </div>
 
       {/* <div className='px-4 md:px-14 my-20'>
-        <video className='rounded-4xl object-cover min-h-[60vh]' controls >
+        <video className=' object-cover min-h-[60vh]' controls >
           <source src="/home/vid.mp4" type="video/mp4" />
         </video>
       </div> */}
 
       <div className='px-4 md:px-14 my-20'>
-        <div className='flex justify-between flex-col md:flex-row'>
-          <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-[#51282b]'>power to the peaple</motion.h4>
-          <a target='_blank' href='https://instagram.com/eat.SNACC' className='rounded-full bg-[#51282b] px-7 py-3 my-3 md:my-0 text-sm  text-white w-fit hover:bg-transparent border-3 border-[#51282b] hover:text-[#51282b] cursor-pointer'>follow @eat.SNACC</a>
+        <div className='flex justify-center flex-col md:flex-row'>
+          {/* <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide text-black'>power to the peaple</motion.h4> */}
+          <a target='_blank' href='https://instagram.com/eat.snacc' className=' bg-[#000000] px-7 py-3 my-3 md:my-0 text-sm  text-white w-fit hover:bg-transparent border-3 border-[#000000] hover:text-black cursor-pointer'>follow @eat.snacc</a>
         </div>
         {/* <div>
           <Carousel
@@ -556,7 +599,7 @@ export default function Homepage() {
           >
             {[...Array(10)].map((e, ind) => {
               return (
-                <div key={ind} className='m-1 rounded-3xl overflow-hidden'>
+                <div key={ind} className='m-1  overflow-hidden'>
                   <img src="/home/power.png" alt="" />
                 </div>
               );

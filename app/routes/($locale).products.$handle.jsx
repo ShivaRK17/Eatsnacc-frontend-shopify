@@ -109,9 +109,9 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-xl font-medium text-[#51282b]">{question}</span>
+        <span className="text-xl font-medium text-black">{question}</span>
         <span className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-          <FaAngleDown size={24} className={`${isOpen ? "bg-[#51282b] text-[#fdb716]" : "text-[#51282b] bg-white"} rounded-full p-1`} />
+          <FaAngleDown size={24} className={`${isOpen ? "bg-[#000000] text-[#fdb716]" : "text-black bg-white"}  p-1`} />
         </span>
       </button>
 
@@ -119,12 +119,12 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
       >
-        <div className="text-xl px-4 py-3 text-[#51282b]">
+        <div className="text-xl px-4 py-3 text-black">
           <p>{answer}</p>
         </div>
       </div>
 
-      <div className="border-b border-[#51282b] mt-4"></div>
+      <div className="border-b border-[#000000] mt-4"></div>
     </div>
   );
 };
@@ -170,16 +170,16 @@ export default function Product() {
   const CustomButtonGroup = ({ next, previous }) => (
     <div className="flex justify-end m-4 mx-16">
       <button
-        className="p-4 rounded-full mx-2 cursor-pointer border-[#51282b] border-1 bg-transparent"
+        className="p-4  mx-2 cursor-pointer border-[#000000] border-1 bg-transparent"
         onClick={previous}
       >
-        <FaAngleLeft size={20} color='#51282b' />
+        <FaAngleLeft size={20} color='#000000' />
       </button>
       <button
-        className="p-4 rounded-full mx-2 cursor-pointer border-[#51282b] border-1 bg-transparent"
+        className="p-4  mx-2 cursor-pointer border-[#000000] border-1 bg-transparent"
         onClick={next}
       >
-        <FaAngleRight size={20} color='#51282b' />
+        <FaAngleRight size={20} color='#000000' />
       </button>
     </div>
   );
@@ -198,7 +198,7 @@ export default function Product() {
           data={product.images.nodes[1]}
         /> : <Image data={product.images.nodes[1]} className='w-full h-full object-cover bg-center bg-no-repeat' src="/home/chips2.png" alt="" />}
       </div>
-      <div className='bg-white p-4'>
+      <div className='bg-white p-4 zigzag-bottom'>
         <div className='flex justify-between'>
           <span>{product.title}</span>
           {/* {JSON.stringify(product)} */}
@@ -209,7 +209,26 @@ export default function Product() {
           <span className='text-sm'>{product?.selectedOrFirstAvailableVariant?.weight}g</span>
         </div>
       </div>
-      <div className='absolute top-4 left-4 rounded-3xl bg-white text-[#51282b] p-1 px-3'>18 pack</div>
+      <div className='absolute top-4 left-4  bg-white text-black p-1 px-3'>18 pack</div>
+      <style jsx>{`
+        .zigzag-bottom {
+          position: relative;
+          margin-top: -1px; /* Remove any gap between image and text div */
+        }
+        .zigzag-bottom::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 20px;
+          background: linear-gradient(-45deg, #fff 12px, transparent 0), linear-gradient(45deg, #fff 12px, transparent 0);
+          background-position: left top;
+          background-repeat: repeat-x;
+          background-size: 24px 20px;
+          transform: translateY(-100%);
+        }
+      `}</style>
     </Link>
   }
 
@@ -226,13 +245,13 @@ export default function Product() {
   return (
     <>
       {product ? <div className=' md:p-14'>
-        <div className="product flex flex-col md:flex-row bg-[#99e1d8] rounded-4xl overflow-auto relative p-4 md:p-14">
+        <div className="product flex flex-col md:flex-row bg-[#99e1d8]  overflow-auto relative p-4 md:p-14">
           {/* <ProductImage image={selectedVariant?.image} /> */}
           <ProductMediaGallery
             media={product.media}
             selectedVariantImage={selectedVariant?.image}
           />
-          <div className="sticky h-fit top-0 text-[#51282b] mx-3 md:mx-10 flex flex-col gap-5 text-xl md:w-1/2">
+          <div className="sticky h-fit top-0 text-black mx-3 md:mx-10 flex flex-col gap-5 text-xl md:w-1/2">
             <h1 style={{ fontFamily: "City Tour" }} className='text-5xl tracking-wide'>{title}</h1>
             <ProductPrice
               className="text-xl font-bold"
@@ -292,19 +311,19 @@ export default function Product() {
           <img className='h-28' src="/home/certs/8.png" alt="" />
         </div>
 
-        <div className='md:rounded-4xl flex-col md:flex-row bg-[#99e1d8] p-3 py-10 md:p-14 my-10 flex'>
+        <div className='md: flex-col md:flex-row bg-[#99e1d8] p-3 py-10 md:p-14 my-10 flex'>
           <div className='md:w-1/3'>
-            <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl text-[#41282b] tracking-wide'>inside the hippeas puff</motion.h4 >
-            <p className='text-[#51282b] text-xl my-5'>Our chickpea puffs are not only made with sustainably grown chickpeas, but also offer a rich source of plant-based protein, fiber and far out flavor!</p>
+            <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-5xl text-[#000000] tracking-wide'>inside the hippeas puff</motion.h4 >
+            <p className='text-black text-xl my-5'>Our chickpea puffs are not only made with sustainably grown chickpeas, but also offer a rich source of plant-based protein, fiber and far out flavor!</p>
           </div>
           <div className='md:w-2/3 md:ml-10'>
             <CompareSlider beforeImage='/product/before.png' afterImage='/product/after.png' />
           </div>
         </div>
 
-        <div className='bg-[#ffc604] rounded-4xl py-10'>
+        <div className='bg-[#ffc604]  py-10'>
           <div className='px-16'>
-            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl tracking-wide font-bold text-[#51282b]'>You may also like...</motion.h4>
+            <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl tracking-wide font-bold text-black'>You may also like...</motion.h4>
           </div>
           <div className='w-full'>
             <Suspense fallback={<div className="text-center">Loading...</div>}>
@@ -353,7 +372,7 @@ export default function Product() {
                         >
                           {response.products.nodes.map((e, ind) => {
                             return (
-                              <motion.div key={ind} className='mx-1 rounded-3xl overflow-hidden h-full' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
+                              <motion.div key={ind} className='mx-1  overflow-hidden h-full' initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * ind }}>
                                 <ChipsCard key={e.id} product={e}>
 
                                 </ChipsCard>

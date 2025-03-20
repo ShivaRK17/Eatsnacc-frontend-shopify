@@ -132,8 +132,8 @@ const ScrollSyncSection = () => {
                                 key={section.id}
                                 ref={(el) => (sectionRefs.current[index] = el)}
                                 className={`py-8 transition-all duration-300 ${activeIndex === index
-                                    ? 'opacity-100 text-[#51282b]'
-                                    : 'opacity-40 text-[#51282b60]'
+                                    ? 'opacity-100 text-black'
+                                    : 'opacity-40 text-[#00000060]'
                                     }`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: activeIndex === index ? 1 : 0.4, y: 0 }}
@@ -165,7 +165,7 @@ const ScrollSyncSection = () => {
                                     duration: 0.5
                                 }}
                             >
-                                <div className="w-full h-2/3 rounded-4xl overflow-hidden flex items-center justify-center bg-gray-100">
+                                <div className="w-full h-2/3  overflow-hidden flex items-center justify-center bg-gray-100">
                                     <img
                                         src={sections[activeIndex].image}
                                         alt={sections[activeIndex].alt}
@@ -180,8 +180,8 @@ const ScrollSyncSection = () => {
             <div className='flex flex-wrap w-full overflow-x-scroll md:hidden'>
                 {sections.map((section, index) => (
                     <div key={section.id}
-                        className={`py-8 w-full transition-all duration-300 text-[#51282b]`}>
-                        <img src={section.image} className='rounded-4xl' alt={section.alt} />
+                        className={`py-8 w-full transition-all duration-300 text-black`}>
+                        <img src={section.image} className='' alt={section.alt} />
                         <h2 style={{ fontFamily: "City Tour" }} className="text-5xl tracking-wide  my-4">{section.title}</h2>
                         <p className="text-2xl">{section.description}</p>
                     </div>

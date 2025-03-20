@@ -9,9 +9,9 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-medium text-[#51282b]">{question}</span>
+        <span className="text-lg font-medium text-black">{question}</span>
         <span className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-          <FaAngleDown size={24} className={`${isOpen?"bg-[#51282b] text-[#fdb716]":"text-[#51282b] bg-white"} rounded-full p-1`} />
+          <FaAngleDown size={24} className={`${isOpen?"bg-[#000000] text-[#fdb716]":"text-black bg-white"}  p-1`} />
         </span>
       </button>
       
@@ -20,12 +20,12 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="text-2xl px-4 py-3 text-[#51282b]">
+        <div className="text-2xl px-4 py-3 text-black">
           <p>{answer}</p>
         </div>
       </div>
       
-       <div className="border-b border-[#51282b] mt-4"></div>
+       <div className="border-b border-[#000000] mt-4"></div>
     </div>
   );
 };
@@ -62,11 +62,11 @@ const FAQSection = () => {
   return (
     <div className="w-full max-w-4xl mx-auto py-16 px-4">
       <div className="text-center mb-8">
-        <h2 style={{fontFamily:"City Tour"}} className="text-6xl font-medium text-[#51282b]">FAQS</h2>
-        <p className="text-2xl text-[#51282b] mt-2">We've got answers.</p>
+        <h2 style={{fontFamily:"City Tour"}} className="text-6xl font-medium text-black">FAQS</h2>
+        <p className="text-2xl text-black mt-2">We've got answers.</p>
       </div>
       
-      <div className="bg-[#fdb716] rounded-3xl p-8">
+      <div className="bg-[#fdb716]  p-8">
         {faqData.map((faq, index) => (
           <FAQItem
             key={index}

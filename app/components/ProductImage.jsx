@@ -12,10 +12,10 @@ export function ProductImage({image}) {
         alt={image.altText || 'Product Image'}
         aspectRatio="1/1"
         data={image}
-        className='rounded-3xl'
+        className=''
         key={image.id}
         sizes="(min-width: 45em) 50vw, 100vw"
-      /> : <img src='/header/bestsell.png' className='rounded-3xl'></img>}
+      /> : <img src='/header/bestsell.png' className=''></img>}
     </div>
   );
 }

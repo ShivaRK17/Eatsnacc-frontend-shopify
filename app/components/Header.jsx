@@ -169,7 +169,7 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain }) {
               >
                 <div className='flex p-8 px-20 justify-between'>
 
-                  <div className='flex flex-col gap-6 text-[#51282b] mr-16'>
+                  <div className='flex flex-col gap-6 text-black mr-16'>
                     <p className='opacity-60'>{item.title}</p>
                     {item.columns.map((column, colIndex) => (
                       <>
@@ -180,14 +180,14 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain }) {
                     ))}
                   </div>
                   <div>
-                    <p className='text-4xl text-[#51282b]'>{item.rows.title}</p>
+                    <p className='text-4xl text-black'>{item.rows.title}</p>
                     <div className='flex gap-3 my-5'>
                       {item.rows.items.map((row, rowIndex) => (
                         <div key={rowIndex}>
-                          <div className='h-72 w-72 rounded-4xl overflow-hidden bg-orange-400'>
+                          <div className='h-72 w-72  overflow-hidden bg-orange-400'>
                             <img src={row.img} className='w-full h-full' alt="" />
                           </div>
-                          <p className='text-[#51282b] text-2xl mt-2'>{row.title}</p>
+                          <p className='text-black text-2xl mt-2'>{row.title}</p>
                           <p className='text-yellow-300 text-xl'>{row.variety}</p>
                         </div>
                       ))}
@@ -198,11 +198,11 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain }) {
           </NavLink>
         ))}
         {/* <NavLink prefetch="intent" to="/learn" className="hidden md:flex items-center">
-          <span className="font-extrabold text-lg text-[#51282b] hover:opacity-80">learn</span>
-          <FaAngleDown className='mt-1 ml-2 font-bold' color='#51282b' />
+          <span className="font-extrabold text-lg text-black hover:opacity-80">learn</span>
+          <FaAngleDown className='mt-1 ml-2 font-bold' color='#000000' />
         </NavLink> */}
         {/* <NavLink prefetch="intent" to="/subscribe" className="hidden md:block">
-          <span className="font-extrabold text-lg text-[#51282b] hover:opacity-80">subscribe</span>
+          <span className="font-extrabold text-lg text-black hover:opacity-80">subscribe</span>
         </NavLink> */}
       </div>
 
@@ -213,7 +213,7 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain }) {
 
       <div className="flex flex-1 items-center gap-20 justify-end">
         {/* <NavLink prefetch="intent" to="/store" className="mr-8 hidden md:block">
-          <span className="text-lg text-[#51282b] hover:opacity-80">find a store</span>
+          <span className="text-lg text-black hover:opacity-80">find a store</span>
         </NavLink> */}
         <AccountLink isLoggedIn={isLoggedIn} />
         <CartToggle cart={cart} />
@@ -262,31 +262,31 @@ export function HeaderMenu({
     <nav className={className} role="navigation">
       <div className='flex flex-col mt-5 gap-5'>
         {/* <NavLink prefetch="intent" to="/shop">
-          <span className="font-extrabold text-2xl text-[#51282b] hover:opacity-80">shop</span>
+          <span className="font-extrabold text-2xl text-black hover:opacity-80">shop</span>
         </NavLink>
         <NavLink prefetch="intent" to="/shop">
-          <span className="font-extrabold text-xl ml-5 opacity-90 text-[#51282b] hover:opacity-80">shop</span>
+          <span className="font-extrabold text-xl ml-5 opacity-90 text-black hover:opacity-80">shop</span>
         </NavLink>
         <NavLink prefetch="intent" to="/learn">
-          <span className="font-extrabold text-2xl text-[#51282b] hover:opacity-80">learn</span>
+          <span className="font-extrabold text-2xl text-black hover:opacity-80">learn</span>
         </NavLink> */}
         {navItems.map((item,ind) => {
           return <div key={ind} className='flex flex-col gap-3'>
             <NavLink prefetch="intent">
-              <span className="font-extrabold text-3xl text-[#51282b] hover:opacity-80">{item.title}</span>
+              <span className="font-extrabold text-3xl text-black hover:opacity-80">{item.title}</span>
             </NavLink>
             {item.columns.map((col,ind) => {
               return <NavLink key={ind} prefetch="intent" to={col.url} onClick={close}>
-                <span className="ml-5 opacity-90 font-extrabold text-2xl text-[#51282b] hover:opacity-70">{col.title}</span>
+                <span className="ml-5 opacity-90 font-extrabold text-2xl text-black hover:opacity-70">{col.title}</span>
               </NavLink>
             })}
           </div>
         })}
       </div>
       <div className='flex my-10 gap-10 justify-center md:justify-start'>
-        <Link><FaFacebook size={28} className="" color='#51282b' /></Link>
-        <Link><FaTwitter size={28} className="" color='#51282b' /></Link>
-        <Link><FaInstagram size={28} className="" color='#51282b' /></Link>
+        <Link><FaFacebook size={28} className="" color='#000000' /></Link>
+        <Link><FaTwitter size={28} className="" color='#000000' /></Link>
+        <Link><FaInstagram size={28} className="" color='#000000' /></Link>
       </div>
 
       {/* {viewport === 'mobile' && (
@@ -391,8 +391,8 @@ function CartBadge({ count }) {
         });
       }}
     >
-      <IoBasketOutline size={27} color='#51282b' />
-      {count === 0 ? '' : <div style={{ fontSize: '10px' }} className='absolute top-0 -right-1 bg-[#51282b] rounded-full text-white w-4 h-4 flex items-center justify-center'><span>{count}</span></div>}
+      <IoBasketOutline size={27} color='#000000' />
+      {count === 0 ? '' : <div style={{ fontSize: '10px' }} className='absolute top-0 -right-1 bg-[#000000]  text-white w-4 h-4 flex items-center justify-center'><span>{count}</span></div>}
     </a>
   );
 }

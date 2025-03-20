@@ -52,7 +52,7 @@ export default function Collections() {
 
   return (
     <div className='text-center px-14'>
-      <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl my-5 tracking-wide text-[#51282b]'>all collections</motion.h4>
+      <motion.h4 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} style={{ fontFamily: "City Tour" }} className='text-6xl my-5 tracking-wide text-black'>all collections</motion.h4>
       <div className='mb-10'>
         <PaginatedResourceSection
           connection={collections}
@@ -82,7 +82,7 @@ function CollectionItem({ collection, index }) {
   return (
 
     <Link
-      className="collection-item rounded-4xl overflow-hidden relative"
+      className="collection-item  overflow-hidden relative"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
@@ -101,8 +101,8 @@ function CollectionItem({ collection, index }) {
         }
         <motion.div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center'>
           <motion.h5 variants={{ initial: { opacity: 1, y: 0 }, animate: { opacity: 1, y: -10 }, }} style={{ fontFamily: "City Tour" }} className=' text-white text-4xl tracking-wide mt-3'>{collection.title}</motion.h5>
-          <motion.div variants={{ initial: { opacity: 0, y: -10,display:'hidden' }, animate: { opacity: 1, y: 0,display:'visible' }, }} className='bg-white mt-2 flex rounded-full p-2 w-fit'>
-            <FaAngleRight size={28} color='#51282b' />
+          <motion.div variants={{ initial: { opacity: 0, y: -10,display:'hidden' }, animate: { opacity: 1, y: 0,display:'visible' }, }} className='bg-white mt-2 flex  p-2 w-fit'>
+            <FaAngleRight size={28} color='#000000' />
           </motion.div>
         </motion.div>
       </motion.div>
