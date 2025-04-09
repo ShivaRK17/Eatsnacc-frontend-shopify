@@ -293,7 +293,7 @@ export default function Homepage() {
         </div>
       </div>
       <div className='px-4 md:px-14'>
-        <div className='bg-[#ffc604]  py-2'>
+        <div className='bg-[#fdb716]  py-2'>
           <div className='px-4 md:px-16'>
             <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl text-[#000]'>no junk in this trunk</motion.h4>
           </div>

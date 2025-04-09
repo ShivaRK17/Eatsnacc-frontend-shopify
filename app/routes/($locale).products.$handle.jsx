@@ -321,7 +321,7 @@ export default function Product() {
           </div>
         </div>
 
-        <div className='bg-[#ffc604]  py-10'>
+        <div className='bg-[#fdb716]  py-10'>
           <div className='px-16'>
             <motion.h4 initial={{ opacity: 0, rotateZ: 30 }} whileInView={{ opacity: 1, rotateZ: 0 }} transition={{ duration: 0.2 }} style={{ fontFamily: "City Tour", transformOrigin: 'left' }} className='text-5xl tracking-wide font-bold text-black'>You may also like...</motion.h4>
           </div>
