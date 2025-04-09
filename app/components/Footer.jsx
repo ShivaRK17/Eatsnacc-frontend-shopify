@@ -63,6 +63,10 @@ const navItems = [
         title: "sustainability",
         url: "pages/sourcing"
       },
+      {
+        title: "refund policy",
+        url: "refund-policy"
+      },
     ],
     rows: {
       title: "let's be social",
