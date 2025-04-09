@@ -123,7 +123,6 @@ export function Footer({ footer: footerPromise, header, publicStoreDomain }) {
                 {item.columns.map((subItem, ind1) => {
                   return <li><Link to={subItem.url}>{subItem.title}</Link></li>
                 })}
-                <li><Link to={'refund-policy'}>Refund Policy</Link></li>
               </ul>
             })}
           </div>
